@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
 --
--- Host: localhost    Database: carport
+-- Host: 127.0.0.1    Database: carport
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	8.0.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,8 +30,9 @@ CREATE TABLE `beslag` (
   `name` varchar(45) DEFAULT NULL,
   `description` text,
   `price` decimal(10,0) DEFAULT NULL,
+  `enhed` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`beslag_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +41,7 @@ CREATE TABLE `beslag` (
 
 LOCK TABLES `beslag` WRITE;
 /*!40000 ALTER TABLE `beslag` DISABLE KEYS */;
+INSERT INTO `beslag` VALUES (1,1000,20,1,'Hulbånd','Til vindkryds på spær',11,'Rulle'),(2,0,190,190,'Universal højre','Til montering af spær på rem',12,'Stk'),(3,0,190,190,'Unisersal venstre','Til montering af spær på rem',12,'Stk'),(4,0,75,50,'Stalddørsgreb','Til lås på dør i skur',5,'Sæt'),(5,360,0,0,'T-hængsel','Til skurdør',5,'Stk'),(6,35,35,35,'Vinkelbeslag','Til montering af løsholter i skur',7,'Stk');
 /*!40000 ALTER TABLE `beslag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,31 +105,6 @@ LOCK TABLES `customer` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `order`
---
-
-DROP TABLE IF EXISTS `order`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `order` (
-  `order_id` int NOT NULL AUTO_INCREMENT,
-  `dato` datetime DEFAULT NULL,
-  `status` tinyint DEFAULT NULL,
-  `subtotal` decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `order`
---
-
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `orderlist`
 --
 
@@ -154,6 +131,33 @@ CREATE TABLE `orderlist` (
 LOCK TABLES `orderlist` WRITE;
 /*!40000 ALTER TABLE `orderlist` DISABLE KEYS */;
 /*!40000 ALTER TABLE `orderlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `order_status` varchar(45) DEFAULT NULL,
+  `order_time` timestamp NULL DEFAULT NULL,
+  `fk_user_id` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `fk_orders_users1_idx` (`fk_user_id`),
+  CONSTRAINT `fk_orders_users1` FOREIGN KEY (`fk_user_id`) REFERENCES `mydb`.`users` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -198,8 +202,9 @@ CREATE TABLE `skruer` (
   `name` varchar(45) DEFAULT NULL,
   `description` text,
   `price` decimal(10,0) DEFAULT NULL,
+  `enhed` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`skruer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,6 +213,7 @@ CREATE TABLE `skruer` (
 
 LOCK TABLES `skruer` WRITE;
 /*!40000 ALTER TABLE `skruer` DISABLE KEYS */;
+INSERT INTO `skruer` VALUES (1,0,0,0,'Plastmo bundskruer 200 stk.','Skruer til tagplader.',10,'Pakke'),(2,60,45,0,'Skruer 200 stk.','Til montering af stern&vandbrædt',11,'Pakke'),(3,50,40,0,'Beslagskruer 250 stk.','Til montering af universalbeslag + hulbånd',12,'Pakke'),(4,120,100,0,'Bræddebolt ','Til montering af rem på stolper',5,'Stk'),(5,40,40,11,'Firkantskiver','Tilmontering af rem på stolper',5,'Stk'),(6,70,45,0,'Skruer 400 stk.','Til montering af yderste beklædning',20,'Pakke'),(7,50,45,0,'Skruer 300 stk.','Til montering af inderste beklædning',15,'Pakke');
 /*!40000 ALTER TABLE `skruer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,8 +232,9 @@ CREATE TABLE `tagplader` (
   `name` varchar(45) DEFAULT NULL,
   `description` text,
   `price` decimal(10,0) DEFAULT NULL,
+  `enhed` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`tagplader_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,6 +243,7 @@ CREATE TABLE `tagplader` (
 
 LOCK TABLES `tagplader` WRITE;
 /*!40000 ALTER TABLE `tagplader` DISABLE KEYS */;
+INSERT INTO `tagplader` VALUES (1,600,200,5,'Plastmo Ecolite blåtonet','tagplader monteres på spær ',20,'Stk'),(2,360,200,5,'Plastmo Ecolite blåtonet','tagplader monteres på spær ',21,'Stk');
 /*!40000 ALTER TABLE `tagplader` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,8 +262,9 @@ CREATE TABLE `træ` (
   `price` decimal(10,0) DEFAULT NULL,
   `description` text,
   `name` varchar(45) DEFAULT NULL,
+  `enhed` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtræ`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -264,6 +273,7 @@ CREATE TABLE `træ` (
 
 LOCK TABLES `træ` WRITE;
 /*!40000 ALTER TABLE `træ` DISABLE KEYS */;
+INSERT INTO `træ` VALUES (1,360,200,25,11,'understernbrædder til for & bag ende','trykimp. Brædt','Stk'),(2,540,200,25,12,'understernbrædder til siderne','trykimp. Brædt','Stk'),(3,360,125,25,13,'oversternbrædder til forenden','trykimp. Brædt','Stk'),(4,540,125,25,14,'oversternbrædder til siderne','trykimp. Brædt','Stk'),(5,420,73,38,15,'til z på bagside af dør ','Lægte ubh.','Stk'),(6,270,95,45,16,'løsholter til skur gavle ','Reglar ub.','Stk'),(7,240,95,45,17,'løsholter til skur sider','Reglar ub.','Stk'),(8,600,195,45,18,'Remme i sider, sadles ned i stolper','spærtræ ubh.','Stk'),(9,480,195,45,19,'Remme i sider, sadles ned i stolper (skur del, deles)','spærtræ ubh.','Stk'),(10,600,195,45,20,'Spær, monteres på rem','spærtræ ubh.','Stk'),(11,300,97,97,21,'Stolper nedgraves 90 cm. i jord','trykimp. Stolpe','Stk'),(12,210,100,19,22,'til beklædning af skur 1 på 2 ','trykimp. Brædt','Stk'),(13,540,100,19,23,'vandbrædt på stern i sider','trykimp. Brædt','Stk'),(14,360,100,19,24,'vandbrædt på stern i forende','trykimp. Brædt','Stk');
 /*!40000 ALTER TABLE `træ` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -276,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-05 20:46:48
+-- Dump completed on 2021-05-05 22:00:47
