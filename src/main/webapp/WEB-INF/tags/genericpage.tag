@@ -69,7 +69,7 @@
 <!-- Footer -->
 <div class="container">
     <br>
-    <hr>
+
     <br>
     <jsp:invoke fragment="footer"/>
 </div>
