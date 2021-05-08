@@ -13,18 +13,14 @@
     <jsp:body>
         <div style="margin-top: 5em;" class="container">
             <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"  method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="email">Email</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="text" name="email" placeholder="someone@nowhere.com">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password">Password</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="password" name="password" placeholder="sesam">
-                    </div>
-                </div>
+
+                <label class="col-form-label">Email</label>
+                    <input class="form-control" type="text" name="email">
+
+                    <label class="col-form-label mt-3">Password</label>
+                    <input class="form-control" type="password" name="password">
+
+
                 <c:if test="${requestScope.error != null }">
                     <p style="color:red">
                             ${requestScope.error}
@@ -34,10 +30,11 @@
                 <c:if test="${not empty param.msg}">
                     <p style="font-size: large">${param.msg}</p>
                 </c:if>
-                <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
+                <button class="btn btn-success float-end mt-3" type="submit" value="Login">Login</button>
             </form>
 
 
         </div>
     </jsp:body>
 </t:genericpage>
+
