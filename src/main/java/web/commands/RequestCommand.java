@@ -1,4 +1,4 @@
-package web.commands;
+/*package web.commands;
 
 import business.entities.User;
 import business.persistence.Database;
@@ -59,3 +59,5 @@ public class RequestCommand extends CommandUnprotectedPage
 
 
 }
+
+ */
