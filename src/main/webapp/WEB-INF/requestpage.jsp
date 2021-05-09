@@ -26,6 +26,8 @@
             <label class="mt-2">Tag</label>
             <input type="text" name="roof_type" class="form-control mt-2">
 
+            <label class="mt-2">Price</label>
+            <input type="text" name="price" class="form-control mt-2">
 
             <label class="mt-2">Redskabsrum bredde</label>
             <input type="text" name="toolroom_width" class="form-control mt-2">
@@ -35,6 +37,7 @@
 
             <hr class="mt-5">
 
+            <!-----
             <label class="mt-5">Navn</label>
             <input type="text" name="name" class="form-control mt-2">
 
@@ -46,7 +49,7 @@
 
             <label class="mt-2">Telefon</label>
             <input type="text" name="phone" class="form-control mt-2">
-
+            --->
 
             <button type="submit" class="mt-3 btn btn-success float-end">Send forespørgelse</button>
 
