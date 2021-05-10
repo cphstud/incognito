@@ -32,9 +32,11 @@
         <c:if test="${addHomeLink == null }">
 
         </c:if>
+    <!-----
         <a class="p-2 text-white" href="#">Orders</a>
         <a class="p-2 text-white" href="#">Profile</a>
         <a class="p-2 text-white" href="#">About</a>
+        ----->
     </nav>
 
     <div>

@@ -15,22 +15,22 @@
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="seallproductpage" type="button" class="btn btn-primary btn-lg ms-5">Se alle varer</a>
+            <a href="${pageContext.request.contextPath}/fc/seallproductpage" type="button" class="btn btn-primary btn-lg ms-5">Se alle varer</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="addnewproductpage" type="button" class="btn btn-primary btn-lg ms-5">Tilføj ny vare</a>
+            <a href="${pageContext.request.contextPath}/fc/addnewproductpage" type="button" class="btn btn-primary btn-lg ms-5">Tilføj ny vare</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="seallsellerspage" type="button" class="btn btn-primary btn-lg ms-5">sælger oversigt</a>
+            <a href="${pageContext.request.contextPath}/fc/seallsellerspage" type="button" class="btn btn-primary btn-lg ms-5">sælger oversigt</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="addnewsellerpage" type="button" class="btn btn-primary btn-lg ms-5">tilføj ny sælger</a>
+            <a href="${pageContext.request.contextPath}/fc/addnewsellerpage" type="button" class="btn btn-primary btn-lg ms-5">tilføj ny sælger</a>
         </div>
 
 
