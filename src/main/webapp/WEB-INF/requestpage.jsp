@@ -26,15 +26,6 @@
             <label class="mt-2">Tag</label>
             <input type="text" name="roof_type" class="form-control mt-2">
 
-            <label class="mt-2">Price</label>
-            <input type="text" name="price" class="form-control mt-2">
-
-            <label class="mt-2">Redskabsrum bredde</label>
-            <input type="text" name="toolroom_width" class="form-control mt-2">
-
-            <label class="mt-2">Redskabsrum længde</label>
-            <input type="text" name="toolroom_length" class="form-control mt-2">
-
             <hr class="mt-5">
 
             <!-----
