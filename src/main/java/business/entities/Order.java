@@ -7,17 +7,15 @@ public class Order {
     private String width;
     private String date;
     private String subtotal;
-    private String status;
     private String roof_type;
 
 
-    public Order(String customer_id, String length, String width, String date, String subtotal, String status, String roof_type) {
+    public Order(String customer_id, String length, String width, String date, String subtotal, String roof_type) {
         this.customer_id = customer_id;
         this.length = length;
         this.width = width;
         this.date = date;
         this.subtotal = subtotal;
-        this.status = status;
         this.roof_type = roof_type;
     }
 
@@ -60,14 +58,6 @@ public class Order {
 
     public void setSubtotal(String subtotal) {
         this.subtotal = subtotal;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getRoof_type() {

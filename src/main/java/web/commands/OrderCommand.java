@@ -29,10 +29,9 @@ public class OrderCommand extends CommandUnprotectedPage
         String customer_id = request.getParameter("customer_id");
         String date = request.getParameter("date");
         String subtotal = request.getParameter("subtotal");
-        String status = request.getParameter("status");
         String roof_type = request.getParameter("roof_type");
 
-        orderFacade.createOrder(customer_id, length, width, date, subtotal, status, roof_type);
+        orderFacade.createOrder(customer_id, length, width, date, subtotal, roof_type);
 
         OrderMapper orderMapper = new OrderMapper(database);
 

@@ -61,10 +61,9 @@ public class OrderMapper
                     String width = rs.getString("width");
                     String date = rs.getString("date");
                     String sub_total = rs.getString("subtotal");
-                    String status = rs.getString("status");
                     String roof_type = rs.getString("roof_type");
 
-                    orders.add(new Order(customer_id, length, width, date, sub_total, status, roof_type));
+                    orders.add(new Order(customer_id, length, width, date, sub_total, roof_type));
                 }
                 return orders;
             }
