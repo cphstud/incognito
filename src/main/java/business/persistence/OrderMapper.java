@@ -4,6 +4,8 @@ import business.entities.Order;
 import business.exceptions.UserException;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderMapper
 {
@@ -29,6 +31,42 @@ public class OrderMapper
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
                 int id = ids.getInt(1);
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException(ex.getMessage());
+        }
+    }
+
+    public List<Order> showAllOrders() throws UserException {
+
+        List<Order> orders = new ArrayList<>();
+
+        try (Connection connection = database.connect())
+        {
+            String sql = "SELECT * FROM orders";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
+            {
+                ResultSet rs = ps.executeQuery();
+
+                while(rs.next()) {
+                    String customer_id = rs.getString("customer_id");
+                    String length = rs.getString("length");
+                    String width = rs.getString("width");
+                    String date = rs.getString("date");
+                    String sub_total = rs.getString("subtotal");
+                    String status = rs.getString("status");
+                    String roof_type = rs.getString("roof_type");
+
+                    orders.add(new Order(customer_id, length, width, date, sub_total, status, roof_type));
+                }
+                return orders;
             }
             catch (SQLException ex)
             {
