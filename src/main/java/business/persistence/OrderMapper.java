@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OrderMapper
 {
-    private Database database;
+    private static Database database;
 
     public OrderMapper(Database database) {
         this.database = database;
@@ -22,8 +22,8 @@ public class OrderMapper
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
-                ps.setString(1, order.getLength());
-                ps.setString(2, order.getWidth());
+                ps.setInt(1, order.getLength());
+                ps.setInt(2, order.getWidth());
                 ps.setString(3, order.getRoof_type());
 
 
@@ -56,11 +56,11 @@ public class OrderMapper
                 ResultSet rs = ps.executeQuery();
 
                 while(rs.next()) {
-                    String customer_id = rs.getString("customer_id");
-                    String length = rs.getString("length");
-                    String width = rs.getString("width");
-                    String date = rs.getString("date");
-                    String sub_total = rs.getString("subtotal");
+                    int customer_id = rs.getInt("customer_id");
+                    int length = rs.getInt("length");
+                    int width = rs.getInt("width");
+                    long date = rs.getLong("date");
+                    int sub_total = rs.getInt("subtotal");
                     String roof_type = rs.getString("roof_type");
 
                     orders.add(new Order(customer_id, length, width, date, sub_total, roof_type));
@@ -77,5 +77,7 @@ public class OrderMapper
             throw new UserException(ex.getMessage());
         }
     }
+
+
 
 }

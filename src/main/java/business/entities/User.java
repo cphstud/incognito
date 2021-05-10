@@ -15,6 +15,11 @@ public class User
     private String password; // Should be hashed and secured
     private String role;
 
+    @Override
+    public String toString() {
+      return "id" + id;
+    }
+
     public String getEmail()
     {
         return email;

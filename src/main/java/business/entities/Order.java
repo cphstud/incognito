@@ -2,15 +2,14 @@ package business.entities;
 
 public class Order {
 
-    private String customer_id;
-    private String length;
-    private String width;
-    private String date;
-    private String subtotal;
+    private int customer_id;
+    private int length;
+    private int width;
+    private long date;
+    private int subtotal;
     private String roof_type;
 
-
-    public Order(String customer_id, String length, String width, String date, String subtotal, String roof_type) {
+    public Order(int customer_id, int length, int width, long date, int subtotal, String roof_type) {
         this.customer_id = customer_id;
         this.length = length;
         this.width = width;
@@ -19,44 +18,43 @@ public class Order {
         this.roof_type = roof_type;
     }
 
-
-    public String getCustomer_id() {
+    public int getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(String customer_id) {
+    public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
 
-    public String getLength() {
+    public int getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
-    public String getWidth() {
+    public int getWidth() {
         return width;
     }
 
-    public void setWidth(String width) {
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
-    public String getSubtotal() {
+    public int getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(String subtotal) {
+    public void setSubtotal(int subtotal) {
         this.subtotal = subtotal;
     }
 

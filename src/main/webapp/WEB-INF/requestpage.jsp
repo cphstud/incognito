@@ -15,7 +15,7 @@
     <jsp:body>
 
 
-        <form action="${pageContext.request.contextPath}/fc/requestpage" method="post">
+        <form action="${pageContext.request.contextPath}/fc/thankyoupage" method="post">
         <div class="container mt-2">
             <label class="mt-2">Carport bredde</label>
             <input type="text" name="width" class="form-control mt-2">
@@ -28,7 +28,7 @@
 
             <hr class="mt-5">
 
-            <!-----
+<!----
             <label class="mt-5">Navn</label>
             <input type="text" name="name" class="form-control mt-2">
 
@@ -40,7 +40,7 @@
 
             <label class="mt-2">Telefon</label>
             <input type="text" name="phone" class="form-control mt-2">
-            --->
+---->
 
             <button type="submit" class="mt-3 btn btn-success float-end">Send forespørgelse</button>
 
