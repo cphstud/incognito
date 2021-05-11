@@ -15,17 +15,14 @@
     <jsp:body>
 
         <div>
-<<<<<<< Updated upstream
-            <h2>Til at lave en order skal du enten login eller opret bruger</h2>
-=======
+
             <h2>Velkommen til Fog's skræddersyning af carporte!</h2>
 
             <div style="margin-top: 3em;margin-bottom: 3em;">
                 Her kan du vælge mellem, at logge ind eller forsætte til skræddersyning af carporte.
             </div>
->>>>>>> Stashed changes
 
-            <button href="" type="button" class="mt-3 btn btn-secondary float-end">Lav ny forespørgsel</button>
+            <br><a href="${pageContext.request.contextPath}/fc/requestpage" class="btn btn-primary mt-3">Lav en forespørgelse</a>
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">Her er hvad du kan gøre, fordi du er logget ind, som sælger./Du er logget ind som: 'Sælger'.
