@@ -32,9 +32,11 @@
         <c:if test="${addHomeLink == null }">
 
         </c:if>
+    <!-----
         <a class="p-2 text-white" href="#">Orders</a>
         <a class="p-2 text-white" href="#">Profile</a>
         <a class="p-2 text-white" href="#">About</a>
+        ----->
     </nav>
 
     <div>
@@ -46,6 +48,7 @@
         <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
         <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
         <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
+
 
         <c:if test="${isNotLoginPage && isNotRegisterPage}">
             <c:if test="${sessionScope.user != null }">

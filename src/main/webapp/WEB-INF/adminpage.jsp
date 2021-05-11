@@ -9,27 +9,28 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        <h1>Du er logget ind som rolle: ${sessionScope.role} </h1>
+        <h1>Admin ID: ${sessionScope.user.id} </h1>
+
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/seallcustomersrequests" type="button" class="btn btn-primary btn-lg ms-5">Se alle kunders forespørgelser</a>
+            <a href="${pageContext.request.contextPath}/fc/seallproductpage" type="button" class="btn btn-primary btn-lg ms-5">Se alle varer</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/seallconfirmedorders" type="button" class="btn btn-primary btn-lg ms-5">Bekræftede order</a>
+            <a href="${pageContext.request.contextPath}/fc/addnewproductpage" type="button" class="btn btn-primary btn-lg ms-5">Tilføj ny vare</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/customeroverview" type="button" class="btn btn-primary btn-lg ms-5">Kundeoversigt</a>
+            <a href="${pageContext.request.contextPath}/fc/seallsellerspage" type="button" class="btn btn-primary btn-lg ms-5">sælger oversigt</a>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
             <br>
-            <a href="${pageContext.request.contextPath}/fc/seallproducts" type="button" class="btn btn-primary btn-lg ms-5">Se alle varer</a>
+            <a href="${pageContext.request.contextPath}/fc/addnewsellerpage" type="button" class="btn btn-primary btn-lg ms-5">tilføj ny sælger</a>
         </div>
 
 

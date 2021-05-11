@@ -23,18 +23,17 @@ DROP TABLE IF EXISTS `carport_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `carport_item` (
-  `order_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL,
   `description` varchar(90) DEFAULT NULL,
   `item_id` int NOT NULL AUTO_INCREMENT,
   `length` varchar(45) DEFAULT NULL,
   `price` int DEFAULT NULL,
-  `roof_type` varchar(45) DEFAULT NULL,
+  `order_id` int DEFAULT NULL,
   PRIMARY KEY (`item_id`),
   KEY `fk_order_has_material_order1_idx` (`order_id`),
-  CONSTRAINT `fk_order_has_material_order1` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`),
+  CONSTRAINT `fk_order_has_material_order1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   CONSTRAINT `fk_orderlist_træ1` FOREIGN KEY (`order_id`) REFERENCES `material` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,38 +75,6 @@ INSERT INTO `material` VALUES (1,360,4,'25x200	mm.	trykimp.	Brædt','stk'),(2,54
 UNLOCK TABLES;
 
 --
--- Table structure for table `order`
---
-
-DROP TABLE IF EXISTS `order`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `order` (
-  `order_id` int NOT NULL AUTO_INCREMENT,
-  `date` datetime DEFAULT NULL,
-  `status` varchar(10) DEFAULT NULL,
-  `subtotal` decimal(10,0) DEFAULT NULL,
-  `customer_id` int DEFAULT NULL,
-  `length` int DEFAULT NULL,
-  `width` int DEFAULT NULL,
-  PRIMARY KEY (`order_id`),
-  KEY `fk_order_customer1_idx` (`customer_id`),
-  KEY `fk_order_order_status1_idx` (`status`),
-  CONSTRAINT `fk_order_customer1` FOREIGN KEY (`customer_id`) REFERENCES `user` (`user_id`),
-  CONSTRAINT `fk_order_order_status1` FOREIGN KEY (`status`) REFERENCES `order_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `order`
---
-
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `order_status`
 --
 
@@ -127,6 +94,41 @@ CREATE TABLE `order_status` (
 LOCK TABLES `order_status` WRITE;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `date` datetime DEFAULT NULL,
+  `my_status` varchar(10) DEFAULT NULL,
+  `subtotal` decimal(10,0) DEFAULT NULL,
+  `customer_id` int DEFAULT NULL,
+  `length` int DEFAULT NULL,
+  `width` int DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  `roof_type` text,
+  PRIMARY KEY (`order_id`),
+  KEY `fk_order_customer1_idx` (`customer_id`),
+  KEY `fk_order_order_status1_idx` (`my_status`),
+  CONSTRAINT `fk_order_customer1` FOREIGN KEY (`customer_id`) REFERENCES `user` (`user_id`),
+  CONSTRAINT `fk_order_order_status1` FOREIGN KEY (`my_status`) REFERENCES `order_status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (52,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(53,NULL,NULL,NULL,NULL,360,360,NULL,'spids'),(54,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(55,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(56,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(57,NULL,NULL,NULL,NULL,123,123,NULL,NULL),(58,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(59,NULL,NULL,NULL,NULL,123,123,NULL,'spids');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -169,7 +171,7 @@ CREATE TABLE `user` (
   `role` varchar(45) DEFAULT NULL,
   `postcode` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +180,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,NULL,NULL,NULL,'ermin','1234','customer',NULL),(4,NULL,NULL,NULL,'daniel','1234','employee',NULL);
+INSERT INTO `user` VALUES (3,NULL,NULL,NULL,'ermin','1234','customer',NULL),(4,NULL,NULL,NULL,'daniel','1234','employee',NULL),(5,NULL,NULL,NULL,'admin','123','admin',NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -191,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 12:24:51
+-- Dump completed on 2021-05-10 14:34:52

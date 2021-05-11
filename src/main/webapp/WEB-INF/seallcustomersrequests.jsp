@@ -18,24 +18,27 @@
         <table class="table mt-5">
             <thead>
             <tr>
-                <th scope="col">Bredde</th>
-                <th scope="col">Længde</th>
-                <th scope="col">Tag</th>
-                <th scope="col">Navn</th>
-                <th scope="col">Status</th>
+                <th scope="col">order_id</th>
+                <th scope="col">length</th>
+                <th scope="col">width</th>
+                <th scope="col">roof_type</th>
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="orders" items="${applicationScope.orders}">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${orders.order_id}</td>
+                <td>${orders.length}</td>
+                <td>${orders.width}</td>
+                <td>${orders.roof_type}</td>
             </tr>
+            </c:forEach>
             </tbody>
         </table>
-
+        <div class="d-flex justify-content-center mt-5">
+            <br>
+            <a href="employeepage" type="button" class="btn btn-danger btn-lg ms-5">Go back</a>
+        </div>
 
 
     </jsp:body>

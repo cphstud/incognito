@@ -15,11 +15,7 @@
     <jsp:body>
 
         <div>
-            <h2>Our Cool Site</h2>
-
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
-            </div>
+            <h2>Til at lave en order skal du enten login eller opret bruger</h2>
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">This is what you can do,
