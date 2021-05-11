@@ -18,21 +18,27 @@
         <table class="table mt-5">
             <thead>
             <tr>
-                <th scope="col">Bredde</th>
-                <th scope="col">Længde</th>
-                <th scope="col">Tag</th>
+                <th scope="col">Kunde ID</th>
                 <th scope="col">Navn</th>
-                <th scope="col">Status</th>
+                <th scope="col">Addresse</th>
+                <th scope="col">Postnr.</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">Rolle</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <c:forEach var="users" items="${requestScope.users}">
+                <tr>
+                    <td>${users.user_id}</td>
+                    <td>${users.name}</td>
+                    <td>${users.address}</td>
+                    <td>${users.postcode}</td>
+                    <td>${users.email}</td>
+                    <td>${users.phone}</td>
+                    <td>${users.role}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
 

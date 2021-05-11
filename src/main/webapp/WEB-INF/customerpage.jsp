@@ -10,17 +10,18 @@
     </jsp:attribute>
 
     <jsp:body>
-
-
-        <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a Customer of our wonderful site.
+        <h1>Hej ${sessionScope.email}! </h1>
+        Du er nu logget ind på din kundeprofil her på vores fantastiske hjemmeside.
         Role: ${sessionScope.role}
 
 
-        <br><a href="${pageContext.request.contextPath}/fc/requestpage" class="btn btn-primary mt-3">Lav en forespørgelse</a>
+        <br><a href="${pageContext.request.contextPath}/fc/requestpage" class="btn btn-primary mt-5">Lav en forespørgelse</a>
+
+        <br><a href="${pageContext.request.contextPath}/fc/customerviewrequestspage" class="btn btn-secondary mt-5">Se dine forespørgsler</a>
+
+        <br><a href="${pageContext.request.contextPath}/fc/customervieworderspage" class="btn btn-secondary mt-5">Se dine ordrer</a>
 
 
     </jsp:body>
 
 </t:genericpage>
-
