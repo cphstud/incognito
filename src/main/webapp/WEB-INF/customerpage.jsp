@@ -10,6 +10,7 @@
     </jsp:attribute>
 
     <jsp:body>
+<<<<<<< Updated upstream
 
 
         <h1>Hello ${sessionScope.email} </h1>
@@ -20,6 +21,17 @@
         <br><a href="${pageContext.request.contextPath}/fc/requestpage" class="btn btn-primary mt-3">Lav en forespørgelse</a>
 
 
+=======
+        <h1>Hej ${sessionScope.email}! </h1>
+        Du er nu logget ind på din kundeprofil her på vores fantastiske hjemmeside.
+        Role: ${sessionScope.role}
+
+        <button href="" type="button" class="mt-3 btn btn-secondary float-end">Lav ny forespørgsel</button>
+
+        <button href="" type="button" class="mt-3 btn btn-secondary float-end">Se dine forespørgsler</button>
+
+        <button href="" type="button" class="mt-3 btn btn-secondary float-end">Se dine bekræftede ordrer</button>
+>>>>>>> Stashed changes
     </jsp:body>
 
 </t:genericpage>

@@ -15,17 +15,27 @@
     <jsp:body>
 
         <div>
+<<<<<<< Updated upstream
             <h2>Til at lave en order skal du enten login eller opret bruger</h2>
+=======
+            <h2>Velkommen til Fog's skræddersyning af carporte!</h2>
+
+            <div style="margin-top: 3em;margin-bottom: 3em;">
+                Her kan du vælge mellem, at logge ind eller forsætte til skræddersyning af carporte.
+            </div>
+>>>>>>> Stashed changes
+
+            <button href="" type="button" class="mt-3 btn btn-secondary float-end">Lav ny forespørgsel</button>
 
             <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
+                <p style="font-size: larger">Her er hvad du kan gøre, fordi du er logget ind, som sælger./Du er logget ind som: 'Sælger'.
+                Du har følgende valgmuligheder:</p>
                  <p><a href="fc/employeepage">Employee Page</a>
              </c:if>
 
              <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
+                <p style="font-size: larger">Her er hvad du kan gøre, fordi du er logget ind, som kunde./Du er logget ind som: 'Kunde'.
+            Du har følgende valgmuligheder:</p>
                 <p><a href="fc/customerpage">Customer Page</a>
             </c:if>
 
