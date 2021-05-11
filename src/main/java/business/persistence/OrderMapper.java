@@ -56,14 +56,12 @@ public class OrderMapper
                 ResultSet rs = ps.executeQuery();
 
                 while(rs.next()) {
-                    String customer_id = rs.getString("customer_id");
+                    String order_id = rs.getString("order_id");
                     String length = rs.getString("length");
                     String width = rs.getString("width");
-                    String date = rs.getString("date");
-                    String sub_total = rs.getString("subtotal");
                     String roof_type = rs.getString("roof_type");
 
-                    orders.add(new Order(customer_id, length, width, date, sub_total, roof_type));
+                    orders.add(new Order(order_id, length, width, roof_type));
                 }
                 return orders;
             }

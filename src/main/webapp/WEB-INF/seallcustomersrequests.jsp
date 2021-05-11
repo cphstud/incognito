@@ -18,14 +18,14 @@
         <table class="table mt-5">
             <thead>
             <tr>
-                <th scope="col">order_id</th>
+                <th scope="col">Order ID</th>
                 <th scope="col">length</th>
                 <th scope="col">width</th>
-                <th scope="col">roof_type</th>
+                <th scope="col">Type</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="orders" items="${applicationScope.orders}">
+            <c:forEach var="orders" items="${requestScope.orders}">
             <tr>
                 <td>${orders.order_id}</td>
                 <td>${orders.length}</td>

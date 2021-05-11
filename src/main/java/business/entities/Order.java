@@ -2,7 +2,7 @@ package business.entities;
 
 public class Order {
 
-    private String customer_id;
+    private String order_id;
     private String length;
     private String width;
     private String date;
@@ -10,22 +10,19 @@ public class Order {
     private String roof_type;
 
 
-    public Order(String customer_id, String length, String width, String date, String subtotal, String roof_type) {
-        this.customer_id = customer_id;
+    public Order(String order_id, String length, String width, String roof_type) {
+        this.order_id = order_id;
         this.length = length;
         this.width = width;
-        this.date = date;
-        this.subtotal = subtotal;
         this.roof_type = roof_type;
     }
 
-
-    public String getCustomer_id() {
-        return customer_id;
+    public String getOrder_id() {
+        return order_id;
     }
 
-    public void setCustomer_id(String customer_id) {
-        this.customer_id = customer_id;
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;
     }
 
     public String getLength() {

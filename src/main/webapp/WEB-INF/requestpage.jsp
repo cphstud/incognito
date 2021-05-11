@@ -23,8 +23,11 @@
             <label class="mt-2">Carport længde</label>
             <input type="text" name="length" class="form-control mt-2">
 
-            <label class="mt-2">Tag</label>
-            <input type="text" name="roof_type" class="form-control mt-2">
+            <select class="form-select mt-4" name="roof_type">
+                <option>Vælg tag type</option>
+                <option value="flat">Flat</option>
+                <option value="rejsning">Rejsning</option>
+            </select>
 
             <hr class="mt-5">
 

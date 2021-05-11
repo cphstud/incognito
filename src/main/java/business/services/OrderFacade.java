@@ -14,8 +14,8 @@ public class OrderFacade {
     }
 
 
-    public Order createOrder(String customer_id, String length, String width, String date, String subtotal, String roof_type) throws UserException {
-        Order order = new Order(customer_id, length, width, date, subtotal, roof_type);
+    public Order createOrder(String order_id, String length, String width, String date) throws UserException {
+        Order order = new Order(order_id, length, width, date);
         orderMapper.createOrder(order);
 
         return order;

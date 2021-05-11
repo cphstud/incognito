@@ -9,29 +9,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class OrderCommand extends CommandUnprotectedPage
+public class OrderCommand extends CommandProtectedPage
 {
     private OrderFacade orderFacade;
 
 
-
-    public OrderCommand(String pageToShow)
-    {
-        super(pageToShow);
+    public OrderCommand(String pageToShow, String role) {
+        super(pageToShow, role);
         this.orderFacade = new OrderFacade(database);
     }
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
+        String order_id = request.getParameter("order_id");
         String width = request.getParameter("width");
         String length = request.getParameter("length");
-        String customer_id = request.getParameter("customer_id");
-        String date = request.getParameter("date");
-        String subtotal = request.getParameter("subtotal");
         String roof_type = request.getParameter("roof_type");
 
-        orderFacade.createOrder(customer_id, length, width, date, subtotal, roof_type);
+        orderFacade.createOrder(order_id, length, width, roof_type);
 
         OrderMapper orderMapper = new OrderMapper(database);
 
@@ -41,7 +37,7 @@ public class OrderCommand extends CommandUnprotectedPage
 
 
             return pageToShow;
-        }
+    }
 
 
 }
