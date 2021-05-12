@@ -13,7 +13,7 @@ import java.util.List;
 
 public class OrderCommand extends CommandProtectedPage
 {
-    private OrderFacade orderFacade;
+    private OrderFacade orderFacade = new OrderFacade(database);
 
     public OrderCommand(String pageToShow, String role) {
         super(pageToShow, role);
@@ -27,9 +27,6 @@ public class OrderCommand extends CommandProtectedPage
         long date = System.currentTimeMillis();
         int width = Integer.parseInt(request.getParameter("width"));
         int length = Integer.parseInt(request.getParameter("length"));
-       // int customer_id = Integer.parseInt(request.getParameter("customer_id"));
-      //  String date = request.getParameter("date");
-       // int subtotal = Integer.parseInt(request.getParameter("subtotal"));
         int subtotal = 0;
         String roof_type = request.getParameter("roof_type");
         System.out.println(u1);
@@ -37,12 +34,11 @@ public class OrderCommand extends CommandProtectedPage
         System.out.println(width);
         System.out.println(length);
         System.out.println(roof_type);
-      //  orderFacade.createOrder(u1.getId(), length, width, date, subtotal, roof_type);
+        Order newOrder =  orderFacade.createOrder(u1.getId(), length, width, date, subtotal, roof_type);
 
-      //  OrderMapper orderMapper = new OrderMapper(database);
 
-     //   List<Order> orders = orderMapper.showAllOrders();
-      //  request.setAttribute("orders", orders);
+        List<Order> orders = orderFacade.showAllOrders();
+        request.setAttribute("orders", orders);
 
 
 

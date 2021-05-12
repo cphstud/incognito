@@ -15,7 +15,8 @@ public class OrderMapper
         this.database = database;
     }
 
-    public void createOrder(Order order) throws UserException {
+    public Order createOrder(Order order) throws UserException {
+
         try (Connection connection = database.connect())
         {
             String sql = "INSERT INTO orders SET width = ?, length = ?, roof_type = ?";
@@ -31,6 +32,8 @@ public class OrderMapper
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
                 int id = ids.getInt(1);
+                order.setOrder_id(id);
+
             }
             catch (SQLException ex)
             {
@@ -41,6 +44,7 @@ public class OrderMapper
         {
             throw new UserException(ex.getMessage());
         }
+        return order;
     }
 
     public List<Order> showAllOrders() throws UserException {
@@ -57,13 +61,14 @@ public class OrderMapper
 
                 while(rs.next()) {
                     int customer_id = rs.getInt("customer_id");
+                    int order_id = rs.getInt("order_id");
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
                     long date = rs.getLong("date");
                     int sub_total = rs.getInt("subtotal");
                     String roof_type = rs.getString("roof_type");
 
-                    orders.add(new Order(customer_id, length, width, date, sub_total, roof_type));
+                    orders.add(new Order(customer_id, length, width, date, sub_total, roof_type, order_id));
                 }
                 return orders;
             }

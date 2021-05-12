@@ -8,6 +8,17 @@ public class Order {
     private long date;
     private int subtotal;
     private String roof_type;
+    private int order_id;
+
+    public Order(int customer_id, int length, int width, long date, int subtotal, String roof_type, int order_id) {
+        this.customer_id = customer_id;
+        this.length = length;
+        this.width = width;
+        this.date = date;
+        this.subtotal = subtotal;
+        this.roof_type = roof_type;
+        this.order_id = order_id;
+    }
 
     public Order(int customer_id, int length, int width, long date, int subtotal, String roof_type) {
         this.customer_id = customer_id;
@@ -17,6 +28,7 @@ public class Order {
         this.subtotal = subtotal;
         this.roof_type = roof_type;
     }
+
 
     public int getCustomer_id() {
         return customer_id;
@@ -64,5 +76,13 @@ public class Order {
 
     public void setRoof_type(String roof_type) {
         this.roof_type = roof_type;
+    }
+
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
     }
 }
