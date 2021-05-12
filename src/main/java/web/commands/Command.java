@@ -41,6 +41,7 @@ public abstract class Command
         commands.put("addnewproductpage", new CommandProtectedPage("addnewproductpage", "admin"));
         commands.put("seallsellerspage", new CommandProtectedPage("seallsellerspage", "admin"));
         commands.put("addnewsellerpage", new CommandProtectedPage("addnewsellerpage", "admin"));
+        commands.put("seallcustomerspage", new UserCommand("seallcustomerspage", "employee"));
     }
 
     public static Command fromPath(

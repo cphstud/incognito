@@ -15,6 +15,9 @@ public class User
     private String password; // Should be hashed and secured
     private String role;
 
+    public User(int bruger_id, String navn, String addresse, String postnr, String telefon, String email, String rolle) {
+    }
+
     @Override
     public String toString() {
       return "id" + id;

@@ -5,6 +5,8 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.util.List;
+
 public class UserFacade
 {
     UserMapper userMapper;
@@ -26,6 +28,8 @@ public class UserFacade
         return user;
     }
 
-    
 
+    public List<User> showAllUsers(int user_id, String name, String address, String postcode, String phone, String email, String role) throws UserException {
+        return userMapper.showAllUsers();
+    }
 }
