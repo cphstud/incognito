@@ -30,7 +30,7 @@ public abstract class Command
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("thankyoupage", new OrderCommand("thankyoupage", "customer"));
         commands.put("employeerequestpage", new CommandProtectedPage("employeerequestpage", "employee"));
-        commands.put("seallcustomersrequests", new OrderCommand("seallcustomersrequests", "employee"));
+        commands.put("seallcustomersrequests", new CommandProtectedPage("seallcustomersrequests", "employee"));
         commands.put("seallconfirmedorders", new CommandProtectedPage("seallconfirmedorders", "employee"));
         commands.put("customeroverview", new CommandProtectedPage("customeroverview", "employee"));
         commands.put("seallproducts", new CommandProtectedPage("seallproducts", "employee"));

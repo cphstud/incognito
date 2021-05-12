@@ -39,6 +39,7 @@ public class OrderCommand extends CommandProtectedPage
 
         List<Order> orders = orderFacade.showAllOrders();
         request.setAttribute("orders", orders);
+        request.setAttribute("newOrder", newOrder);
 
 
 

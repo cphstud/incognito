@@ -19,14 +19,25 @@
             <p class="mb-0">Der er sendt en bekræftelse til din email</p>
         </div>
 
-        <c:forEach var="orders" items="${requestScope.orders}">
-                <h1>Carport bredde:</h1>
-                <p>${orders.width}</p>
-                <h1>Carport længde:</h1>
-                <p>${orders.length}</p>
-                <h1>Tag:</h1>
-                <p>${orders.roof_type}</p>
-        </c:forEach>
+        <h5>Carport bredde:</h5>
+        <p>
+                ${requestScope.newOrder.width} cm
+        </p>
+
+        <h5>Carport længde:</h5>
+        <p>
+                ${requestScope.newOrder.length} cm
+        </p>
+
+        <h5>Carport tag:</h5>
+        <p>
+                ${requestScope.newOrder.roof_type}
+        </p>
+
+        <div class="d-flex justify-content-center mt-5">
+            <br>
+            <a href="customerpage" type="button" class="btn btn-danger btn-lg ms-5">Gå til din kundeprofil</a>
+        </div>
 
 
 
