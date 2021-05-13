@@ -59,7 +59,7 @@ public class OrderMapper
             {
                 ResultSet rs = ps.executeQuery();
 
-                while(rs.next()) {
+                while (rs.next()) {
                     int customer_id = rs.getInt("customer_id");
                     int order_id = rs.getInt("order_id");
                     int length = rs.getInt("length");
