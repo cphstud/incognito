@@ -2,6 +2,7 @@ package business.persistence;
 
 import business.entities.Order;
 import business.exceptions.UserException;
+import business.services.OrderFacade;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public class OrderMapper
     }
 
     public List<Order> showAllOrders() throws UserException {
-
         List<Order> orders = new ArrayList<>();
 
         try (Connection connection = database.connect())
@@ -59,7 +59,7 @@ public class OrderMapper
             {
                 ResultSet rs = ps.executeQuery();
 
-                while(rs.next()) {
+                while (rs.next()) {
                     int customer_id = rs.getInt("customer_id");
                     int order_id = rs.getInt("order_id");
                     int length = rs.getInt("length");

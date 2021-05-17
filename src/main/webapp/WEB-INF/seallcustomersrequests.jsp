@@ -22,6 +22,7 @@
                 <th scope="col">length</th>
                 <th scope="col">width</th>
                 <th scope="col">Type</th>
+                <th>See Pieces List</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                 <td>${orders.length}</td>
                 <td>${orders.width}</td>
                 <td>${orders.roof_type}</td>
+                <td><a href="${pageContext.request.contextPath}/fc/seeonepieceslistpage" class="btn btn-primary">Se stykliste</a></td>
             </tr>
             </c:forEach>
             </tbody>
