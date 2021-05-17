@@ -48,5 +48,4 @@ public class BillOfMaterialsMapper {
     public void addItem() {
 
     }
-
 }
