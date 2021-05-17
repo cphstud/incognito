@@ -3,6 +3,7 @@ package web.commands;
 import business.exceptions.UserException;
 import business.persistence.Database;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,7 @@ public abstract class Command
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("thankyoupage", new CreateNewOrderCommand("thankyoupage", "customer"));
+        commands.put("seeonepieceslistpage", new ShowAllCarportItemsCommand("seeonepieceslistpage", "employee"));
         commands.put("employeerequestpage", new CommandProtectedPage("employeerequestpage", "employee"));
         commands.put("seallcustomersrequests", new ShowAllOrdersCommand("seallcustomersrequests", "employee"));
         commands.put("seallconfirmedorders", new CommandProtectedPage("seallconfirmedorders", "employee"));
@@ -62,6 +64,6 @@ public abstract class Command
     public abstract String execute(
             HttpServletRequest request,
             HttpServletResponse response)
-            throws UserException;
+            throws UserException, SQLException;
 
 }

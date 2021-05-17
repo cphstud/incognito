@@ -41,4 +41,12 @@ public class BillOfMaterialsMapper {
         }
     }
 
+    public void getTotalPrice() {
+
+    }
+
+    public void addItem() {
+
+    }
+
 }
