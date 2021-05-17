@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class OrderCommand extends CommandProtectedPage
+public class CreateNewOrderCommand extends CommandProtectedPage
 {
     private OrderFacade orderFacade = new OrderFacade(database);
 
-    public OrderCommand(String pageToShow, String role) {
+    public CreateNewOrderCommand(String pageToShow, String role) {
         super(pageToShow, role);
     }
 
@@ -26,8 +26,6 @@ public class OrderCommand extends CommandProtectedPage
         User u1 = (User) session.getAttribute("user");
         long date = System.currentTimeMillis();
 
-      //  Order newOrder = null;
-        try {
 
         int width = Integer.parseInt(request.getParameter("width"));
         int length = Integer.parseInt(request.getParameter("length"));
@@ -37,12 +35,6 @@ public class OrderCommand extends CommandProtectedPage
         Order newOrder =  orderFacade.createOrder(u1.getId(), length, width, date, subtotal, roof_type);
         request.setAttribute("newOrder", newOrder);
 
-        } catch (NumberFormatException e) {
-        List<Order> orders = orderFacade.showAllOrders();
-        request.setAttribute("orders", orders);
-
-
-        }
 
             return pageToShow;
     }

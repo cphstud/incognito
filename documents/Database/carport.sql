@@ -27,13 +27,14 @@ CREATE TABLE `carport_item` (
   `description` varchar(90) DEFAULT NULL,
   `item_id` int NOT NULL AUTO_INCREMENT,
   `length` varchar(45) DEFAULT NULL,
+  `width` varchar(45) DEFAULT NULL,
   `price` int DEFAULT NULL,
   `order_id` int DEFAULT NULL,
   PRIMARY KEY (`item_id`),
   KEY `fk_order_has_material_order1_idx` (`order_id`),
   CONSTRAINT `fk_order_has_material_order1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   CONSTRAINT `fk_orderlist_træ1` FOREIGN KEY (`order_id`) REFERENCES `material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,6 +94,7 @@ CREATE TABLE `order_status` (
 
 LOCK TABLES `order_status` WRITE;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
+INSERT INTO `order_status` VALUES ('Afv betl'),('Afv godk'),('Betl Afvis'),('Fspg Afvis'),('Ordr Afsl');
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +108,7 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_id` int NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT NULL,
-  `my_status` varchar(10) DEFAULT NULL,
+  `my_status` varchar(100) DEFAULT NULL,
   `subtotal` decimal(10,0) DEFAULT NULL,
   `customer_id` int DEFAULT NULL,
   `length` int DEFAULT NULL,
@@ -118,7 +120,7 @@ CREATE TABLE `orders` (
   KEY `fk_order_order_status1_idx` (`my_status`),
   CONSTRAINT `fk_order_customer1` FOREIGN KEY (`customer_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `fk_order_order_status1` FOREIGN KEY (`my_status`) REFERENCES `order_status` (`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +129,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (52,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(53,NULL,NULL,NULL,NULL,360,360,NULL,'spids'),(54,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(55,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(56,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(57,NULL,NULL,NULL,NULL,123,123,NULL,NULL),(58,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(59,NULL,NULL,NULL,NULL,123,123,NULL,'spids');
+INSERT INTO `orders` VALUES (180,NULL,NULL,NULL,NULL,123,150,NULL,'flat'),(181,NULL,NULL,NULL,NULL,123,167,NULL,'flat'),(182,NULL,NULL,NULL,NULL,123,123,NULL,'flat'),(183,NULL,NULL,NULL,NULL,150,200,NULL,'rejsning'),(184,NULL,NULL,NULL,NULL,123,123,NULL,'rejsning'),(185,NULL,NULL,NULL,NULL,123,123,NULL,'rejsning'),(186,NULL,NULL,NULL,NULL,123,123,NULL,'rejsning');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-10 14:34:52
+-- Dump completed on 2021-05-17 10:47:44
