@@ -1,10 +1,9 @@
 
 
 <svg  xmlns="http://www.w3.org/2000/svg"
-      width="5000" height="5000"  viewBox="0 0 255 210">
+      width="2500" height="2500"  viewBox="0 0 255 210">
 
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
     <rect x="55" y="-22" width="200" height="200" stroke="black" fill="white"/>
 
     svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
