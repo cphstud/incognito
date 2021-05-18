@@ -19,9 +19,8 @@
             <h2>Tegning</h2>
 
             <p>Her indsættes en tegning</p>
-            <div class="d-flex justify-content-start">
                 ${requestScope.drawing}
-            </div>
+
 
 
 
