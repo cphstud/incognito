@@ -1,35 +1,90 @@
+
+
 <svg  xmlns="http://www.w3.org/2000/svg"
-      width="1000" height="1000"  viewBox="0 0 255 210">
+      width="2500" height="2500"  viewBox="0 0 255 210">
+
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
-    <rect width="2000" height="2000" stroke="black" fill="white"/>
+    <rect x="55" y="-22" width="200" height="200" stroke="black" fill="white"/>
 
     svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line x1="2000" y1="10" x2="00" y2="10" stroke="black" />
+    <line x1="300" y1="-10" x2="55" y2="-10" stroke="black" />
 
     svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line x1="2000" y1="225" x2="0" y2="225" stroke="black" />
+    <line x1="300" y1="165" x2="55" y2="165" stroke="black" />
 
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
-    <rect x="40" width="5" height="5" stroke="black" y="7" fill="black"/>
+    <rect x="80" width="5" height="5" stroke="black" y="-13" fill="black"/>
 
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
-    <rect x="200" width="5" height="5" stroke="black" y="7" fill="black"/>
+    <rect x="220" width="5" height="5" stroke="black" y="-13" fill="black"/>
 
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
-    <rect x="40" width="5" height="5" stroke="black" y="223" fill="black"/>
+    <rect x="220" width="5" height="5" stroke="black" y="163" fill="black"/>
 
     viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <!-- Simple rectangle -->
-    <rect x="200" width="5" height="5" stroke="black" y="223" fill="black"/>
+    <rect x="80" width="5" height="5" stroke="black" y="163" fill="black"/>
 
     svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line stroke-dasharray="5, 5" x1="2000" y1="1950" x2="10" y2="10" stroke="black" />
+    <line stroke-dasharray="5, 5" x1="2000" y1="1900" x2="50" y2="-25" stroke="black" />
 
     svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line stroke-dasharray="5, 5" x1="-2000" y1="2100" x2="250" y2="10" stroke="black" />
+    <line stroke-dasharray="5, 5" x1="-2365" y1="2506" x2="350" y2="-110" stroke="black" />
 
-</svg>
+
+    <text x="120" y="15" style="text-anchor: middle" transform="translate(10,200) rotate(-90)"> 600 cm</text>
+    <text x="150" y="15" style="text-anchor: middle" transform="translate(10,200) rotate(-360)"> 780 cm</text>
+
+    width="25%" viewBox="0 0 150 40">
+        <defs>
+            <marker
+                    id="beginArrow"
+                    markerWidth="12"
+                    markerHeight="12"
+                    refX="0"
+                    refY="6"
+                    orient="auto">
+                <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
+            </marker>
+            <marker
+                    id="endArrow"
+                    markerWidth="12"
+                    markerHeight="12"
+                    refX="12"
+                    refY="6"
+                    orient="auto">
+                <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;" />
+            </marker>
+        </defs>
+        <line x1="30"  y1="10" x2="30"   y2="150"
+              style="stroke: #006600;
+	marker-start: url(#beginArrow);
+	marker-end: url(#endArrow);"/>
+
+
+
+        width="25%" viewBox="0 0 150 40">
+        <defs>
+            <marker
+                    id="beginArrow"
+                    markerWidth="12"
+                    markerHeight="12"
+                    refX="0"
+                    refY="6"
+                    orient="auto">
+                <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
+            </marker>
+            <marker
+                    id="endArrow"
+                    markerWidth="12"
+                    markerHeight="12"
+                    refX="12"
+                    refY="6"
+                    orient="auto">
+                <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;" />
+            </marker>
+        </defs>
+        <line x1="80"  y1="200" x2="230"   y2="200"
+              style="stroke: #006600;
+        marker-start: url(#beginArrow);
+        marker-end: url(#endArrow);"/>
+    </svg>

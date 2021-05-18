@@ -45,6 +45,7 @@ public abstract class Command
         commands.put("addnewsellerpage", new CommandProtectedPage("addnewsellerpage", "admin"));
         commands.put("customerviewrequestspage", new ViewCustomerRequestsCommand("customerviewrequestspage", "customer"));
         commands.put("confirmpaymentpage", new ConfirmPaymentCommand("confirmpaymentpage", "customer"));
+        commands.put("showsvg",new showSVGCommand  ("svgpage"));
     }
 
     public static Command fromPath(
