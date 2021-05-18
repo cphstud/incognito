@@ -29,9 +29,8 @@ public class ConfirmPaymentCommand extends CommandProtectedPage
 
 
 
-        List<ConfirmPayment> payment = confirmPaymentFacade.ViewAllConfirmedPayments();
-        request.setAttribute("payment", payment);
-
+        List<ConfirmPayment> confirmpayment = confirmPaymentFacade.ViewAllConfirmedPayments();
+        request.setAttribute("confirmpayment", confirmpayment);
         return pageToShow;
 
     }
