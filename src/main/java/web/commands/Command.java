@@ -47,6 +47,7 @@ public abstract class Command
         commands.put("confirmpaymentpage", new ConfirmPaymentCommand("confirmpaymentpage", "customer"));
         commands.put("showsvg",new showSVGCommand  ("svgpage"));
         commands.put("seallcustomerspage", new UserCommand("seallcustomerspage", "employee"));
+        commands.put("orderconfirmationpage", new OrderConfirmationCommand("orderconfirmationpage", "customer"));
     }
 
     public static Command fromPath(
