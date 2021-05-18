@@ -1,90 +1,66 @@
+<?xml version="1.0" ?>
+
+<svg version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     height="100%"  viewBox="0 0 855 690"
+     preserveAspectRatio="xMinYMin">
+
+    <defs>
+        <marker id="beginArrow" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto">
+            <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
+        </marker>
+        <marker id="endArrow" markerWidth="12" markerHeight="12" refX="12" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 L0,0" style="fill: #000000;" />
+        </marker>
+    </defs>
+
+    <!-- Ramme -->
 
 
-<svg  xmlns="http://www.w3.org/2000/svg"
-      width="2500" height="2500"  viewBox="0 0 255 210">
+    <!-- Pile -->
+    <line x1="45" y1="10" x2="40" y2="610" style="stroke:#000000;
+    marker-start: url(#beginArrow);
+    marker-end: url(#endArrow);"/>
 
-    viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="55" y="-22" width="200" height="200" stroke="black" fill="white"/>
-
-    svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line x1="300" y1="-10" x2="55" y2="-10" stroke="black" />
-
-    svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line x1="300" y1="165" x2="55" y2="165" stroke="black" />
-
-    viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="80" width="5" height="5" stroke="black" y="-13" fill="black"/>
-
-    viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="220" width="5" height="5" stroke="black" y="-13" fill="black"/>
-
-    viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="220" width="5" height="5" stroke="black" y="163" fill="black"/>
-
-    viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
-    <rect x="80" width="5" height="5" stroke="black" y="163" fill="black"/>
-
-    svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line stroke-dasharray="5, 5" x1="2000" y1="1900" x2="50" y2="-25" stroke="black" />
-
-    svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <line stroke-dasharray="5, 5" x1="-2365" y1="2506" x2="350" y2="-110" stroke="black" />
+    <line x1="75" y1="650" x2="855" y2="650" style="stroke:#000000;
+    marker-start: url(#beginArrow);
+    marker-end: url(#endArrow);"/>
 
 
-    <text x="120" y="15" style="text-anchor: middle" transform="translate(10,200) rotate(-90)"> 600 cm</text>
-    <text x="150" y="15" style="text-anchor: middle" transform="translate(10,200) rotate(-360)"> 780 cm</text>
-
-    width="25%" viewBox="0 0 150 40">
-        <defs>
-            <marker
-                    id="beginArrow"
-                    markerWidth="12"
-                    markerHeight="12"
-                    refX="0"
-                    refY="6"
-                    orient="auto">
-                <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
-            </marker>
-            <marker
-                    id="endArrow"
-                    markerWidth="12"
-                    markerHeight="12"
-                    refX="12"
-                    refY="6"
-                    orient="auto">
-                <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;" />
-            </marker>
-        </defs>
-        <line x1="30"  y1="10" x2="30"   y2="150"
-              style="stroke: #006600;
-	marker-start: url(#beginArrow);
-	marker-end: url(#endArrow);"/>
+    <!-- Text: mål -->
+    <text style="text-anchor: middle" transform="translate(30,300) rotate(-90)">600 cm</text>
+    <text style="text-anchor: middle" x="502" y="670">780 cm</text>
 
 
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="75" y="10" width="800"></svg>
 
-        width="25%" viewBox="0 0 150 40">
-        <defs>
-            <marker
-                    id="beginArrow"
-                    markerWidth="12"
-                    markerHeight="12"
-                    refX="0"
-                    refY="6"
-                    orient="auto">
-                <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
-            </marker>
-            <marker
-                    id="endArrow"
-                    markerWidth="12"
-                    markerHeight="12"
-                    refX="12"
-                    refY="6"
-                    orient="auto">
-                <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;" />
-            </marker>
-        </defs>
-        <line x1="80"  y1="200" x2="230"   y2="200"
-              style="stroke: #006600;
-        marker-start: url(#beginArrow);
-        marker-end: url(#endArrow);"/>
+    <!-- Ramme -->
+    <rect x="70" y="10" height="600" width="780" style="stroke:#000000; fill: #ffffff" />
+
+
+    <!-- Ramme -->
+    <rect x="70" y="45" height="4.5" width="780" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="70" y="575" height="4.5" width="780" style="stroke:#000000; fill: #ffffff"/>
+
+
+    <!-- Spær -->
+    <rect x="70" y="10" height="600" width="4.5" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="850" y="10" height="600" width="4.5" style="stroke:#000000; fill: #ffffff"/>
+
+    <!-- strippede linje -->
+    <line stroke-dasharray="5, 5" x1="700" y1="580" x2="130" y2="45" stroke="black" />
+    <line stroke-dasharray="5, 5" x1="130" y1="580" x2="700" y2="45" stroke="black" />
+
+    <!-- stolper toppen -->
+    <rect x="180" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="500" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="780" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+
+    <!-- stolper bund -->
+    <rect x="180" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="500" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="780" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+
     </svg>
+
