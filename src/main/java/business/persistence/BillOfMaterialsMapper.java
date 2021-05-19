@@ -26,13 +26,14 @@ public class BillOfMaterialsMapper {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
+                    int item_id = rs.getInt("item_ID");
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
                     int quantity = rs.getInt("quantity");
                     int price = rs.getInt("price");
                     String description = rs.getString("description");
 
-                    carportItems.add(new CarportItem(length, width, quantity, price, description));
+                    carportItems.add(new CarportItem(item_id, length, width, quantity, price, description));
                 }
                 return carportItems;
             } catch (SQLException ex) {
