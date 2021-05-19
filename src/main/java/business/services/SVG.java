@@ -45,9 +45,13 @@ public class SVG
         svg.append(String.format(lineTemplate, x1, y1, x2, y2));
     }
 
-    public void addSvg(SVG innerSVG)
+    public void addinnerSvg(SVG innerSVG)
     {
         svg.append(innerSVG.toString());
+    }
+    public void addouterSvg(SVG outerSVG)
+    {
+        svg.append(outerSVG.toString());
     }
 
 

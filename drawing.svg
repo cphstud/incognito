@@ -6,6 +6,11 @@
      height="100%"  viewBox="0 0 855 690"
      preserveAspectRatio="xMinYMin">
 
+    <!-- hvid Ramme -->
+    <rect x="0" y="0" height="700" width="880"
+          style="stroke:#000000; fill: #ffffff" />
+
+
     <defs>
         <marker id="beginArrow" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto">
             <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;" />
@@ -15,103 +20,102 @@
         </marker>
     </defs>
 
-    <!-- Ramme -->
+    <!-- carport -->
+    <svg version="1.1"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         x="1"
+         y="10"
+         width="780"
+         height="700"
+         preserveAspectRatio="xMinYMin">
 
+        <!-- vandret spær i toppen -->
+        <rect x="70" y="45" height="4.5" width="750" style="stroke:#000000; fill: #ffffff"/>
+        <!-- vandret spær i bunden -->
+        <rect x="70" y="575" height="4.5" width="750" style="stroke:#000000; fill: #ffffff"/>
 
-    <!-- Pile -->
-    <line x1="45" y1="10" x2="40" y2="610" style="stroke:#000000;
+        <line x1="70" y1="10" x2="820" y2="10" style="stroke:#000000;"/>
+        <line x1="70" y1="610" x2="820" y2="610" style="stroke:#000000;"/>
+
+        <!-- Spær -->
+        <rect x="70" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="120" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="170" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="220" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="270" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="320" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="370" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="420" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="470" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="520" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="570" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="620" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="670" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="720" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="770" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <rect x="815" y="10" height="600" width="4.5"
+              style="stroke:#000000; fill: #ffffff"/>
+
+        <!-- strippede linje -->
+        <line stroke-dasharray="5, 5" x1="700" y1="580" x2="130" y2="45" stroke="black" />
+        <line stroke-dasharray="5, 5" x1="130" y1="580" x2="700" y2="45" stroke="black" />
+
+        <!-- stolper toppen -->
+        <rect x="180" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+        <rect x="500" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+        <rect x="780" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+
+        <!-- stolper bund -->
+        <rect x="180" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+        <rect x="500" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+        <rect x="780" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+
+    </svg>
+
+    <!-- arrowPil til venstre -->
+    <line x1="45" y1="20" x2="45" y2="620" style="stroke:#000000;
     marker-start: url(#beginArrow);
     marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(40,300) rotate(-90)">600 cm</text>
 
-    <line x1="75" y1="680" x2="855" y2="680" style="stroke:#000000;
+    <!-- arrowPil til bunden -->
+    <line x1="70" y1="675" x2="820" y2="675" style="stroke:#000000;
     marker-start: url(#beginArrow);
     marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" x="445" y="690">780 cm</text>
 
-
-    <!-- Text: mål -->
-    <text style="text-anchor: middle" transform="translate(30,300) rotate(-90)">600 cm</text>
-    <text style="text-anchor: middle" x="500" y="700">780 cm</text>
-
-
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="75" y="10" width="800"></svg>
-
-    <!-- Ramme -->
-    <rect x="70" y="10" height="600" width="780" style="stroke:#000000; fill: #ffffff" />
-
-
-    <!-- Ramme -->
-    <rect x="70" y="45" height="4.5" width="780" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="70" y="575" height="4.5" width="780" style="stroke:#000000; fill: #ffffff"/>
-
-
-    <!-- Spær -->
-    <rect x="70" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="120" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="170" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="220" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="270" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="320" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="370" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="420" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="470" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="520" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="570" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="620" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="670" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="720" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="770" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="820" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-    <rect x="850" y="10" height="600" width="4.5"
-          style="stroke:#000000; fill: #ffffff"/>
-
-
-    <!-- strippede linje -->
-    <line stroke-dasharray="5, 5" x1="700" y1="580" x2="130" y2="45" stroke="black" />
-    <line stroke-dasharray="5, 5" x1="130" y1="580" x2="700" y2="45" stroke="black" />
-
-    <!-- stolper toppen -->
-    <rect x="180" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="500" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="780" y="42" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-
-    <!-- stolper bund -->
-    <rect x="180" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="500" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="780" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
-
-    <!--    Vandret spær (stiger 55)-->
+    <!--   mål til Vandret spær (stiger 55)-->
     <line x1="70"  y1="640" x2="120"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
     <text style="text-anchor: middle" transform="translate(95,660) rotate(0)">0,55</text>
 
@@ -156,9 +160,6 @@
 
     <line x1="820"  y1="640" x2="770"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
     <text style="text-anchor: middle" transform="translate(795,660) rotate(0)">0,55</text>
-
-    <line x1="855"  y1="640" x2="820"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
-    <text style="text-anchor: middle" transform="translate(840,660) rotate(0)">0,55</text>
 
     </svg>
 
