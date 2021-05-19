@@ -35,11 +35,11 @@ public abstract class Command
         commands.put("seallcustomersrequests", new ShowAllOrdersCommand("seallcustomersrequests", "employee"));
         commands.put("seallconfirmedorders", new CommandProtectedPage("seallconfirmedorders", "employee"));
         commands.put("customeroverview", new CommandProtectedPage("customeroverview", "employee"));
-        commands.put("seallproducts", new CommandProtectedPage("seallproducts", "employee"));
+        commands.put("seeallproductspage", new ShowAllProductsCommand("seeallproductspage", "employee"));
         commands.put("createoffer", new CommandProtectedPage("createoffer", "employee"));
         commands.put("requestpage", new CommandProtectedPage("requestpage", "customer"));
         commands.put("adminpage", new CommandProtectedPage("adminpage", "admin"));
-        commands.put("seallproductpage", new CommandProtectedPage("seallproductpage", "admin"));
+      //  commands.put("seeallproductspage", new CommandProtectedPage("seeallproductspage", "admin"));
         commands.put("addnewproductpage", new CommandProtectedPage("addnewproductpage", "admin"));
         commands.put("seallsellerspage", new CommandProtectedPage("seallsellerspage", "admin"));
         commands.put("addnewsellerpage", new CommandProtectedPage("addnewsellerpage", "admin"));
@@ -48,6 +48,7 @@ public abstract class Command
         commands.put("showsvg",new showSVGCommand  ("svgpage"));
         commands.put("seallcustomerspage", new UserCommand("seallcustomerspage", "employee"));
         commands.put("orderconfirmationpage", new OrderConfirmationCommand("orderconfirmationpage", "customer"));
+        commands.put("seeallconfirmedorders", new ListOfAllConfirmedOrdersCommand("seeallconfirmedorders", "employee"));
     }
 
     public static Command fromPath(
@@ -69,6 +70,6 @@ public abstract class Command
     public abstract String execute(
             HttpServletRequest request,
             HttpServletResponse response)
-            throws UserException, SQLException;
+            throws Exception;
 
 }

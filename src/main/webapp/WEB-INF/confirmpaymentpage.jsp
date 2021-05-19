@@ -24,7 +24,7 @@
 
         <div class="contact mt-5">
             <h3>Kontakt Informationer:</h3>
-
+            ${requestScope.contactInformation.address}
         </div>
 
         <table class="table mt-5">
@@ -38,13 +38,13 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="confirmpayment" items="${requestScope.confirmpayment}">
+            <c:forEach var="confirmPayment" items="${requestScope.confirmPayment}">
                 <tr>
-                    <td>${confirmpayment.width}</td>
-                    <td>${confirmpayment.length}</td>
-                    <td>${confirmpayment.roof_type}</td>
-                    <td>${confirmpayment.name}</td>
-                    <td>${confirmpayment.status}</td>
+                    <td>${confirmPayment.width}</td>
+                    <td>${confirmPayment.length}</td>
+                    <td>${confirmPayment.roof_type}</td>
+                    <td>${confirmPayment.name}</td>
+                    <td>${confirmPayment.status}</td>
                 </tr>
             </c:forEach>
             </tbody>

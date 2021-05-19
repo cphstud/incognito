@@ -20,7 +20,7 @@ public class CommandProtectedPage extends Command
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException, SQLException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         return pageToShow;
     }
 

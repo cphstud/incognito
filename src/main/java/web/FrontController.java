@@ -74,6 +74,8 @@ public class FrontController extends HttpServlet
             request.setAttribute("problem", ex.getMessage());
             Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
             request.getRequestDispatcher("/errorpage.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

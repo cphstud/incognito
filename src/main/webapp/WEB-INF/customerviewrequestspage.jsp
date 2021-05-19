@@ -35,6 +35,14 @@
                     <td>${requests.roof_type}</td>
                     <td>${requests.name}</td>
                     <td>${requests.status}</td>
+                    <td>
+                        <form action="${pageContext.request.contextPath}/fc/confirmpaymentpage" method="POST">
+                            <!----<input type="hidden" name="order_id" value="${requests.order_id}"/>
+                            <button class="btn btn-primary btn-sm" type="submit">Betal</button>
+                            ----->
+                            <a href="${requests.order_id}}">Betal</a>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
@@ -43,7 +51,6 @@
         <div class="d-flex justify-content-center mt-5">
             <br>
             <a href="employeepage" type="button" class="btn btn-primary btn-lg ms-5">Gå tilbage</a>
-            <a href="confirmpaymentpage" type="button" class="btn btn-success btn-lg ms-5">Bekræft betaling <img src="${pageContext.request.contextPath}/images/arrow.png" width="30" class="ms-2"></a>
         </div>
 
 
