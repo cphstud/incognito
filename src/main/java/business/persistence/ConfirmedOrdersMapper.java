@@ -1,42 +1,39 @@
 package business.persistence;
 
-import business.entities.CarportItem;
-import business.entities.Order;
+import business.entities.ConfirmedOrders;
 import business.exceptions.UserException;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillOfMaterialsMapper {
+public class ConfirmedOrdersMapper {
 
     private static Database database;
 
-    public BillOfMaterialsMapper(Database database) {
+    public ConfirmedOrdersMapper(Database database) {
         this.database = database;
     }
 
-    public List<CarportItem> BillOfMaterials() throws UserException, SQLException {
-        List<CarportItem> carportItems = new ArrayList<>();
+    public List<ConfirmedOrders> ListOfAllConfirmedOrders() throws UserException, SQLException {
+        List<ConfirmedOrders> confirmedOrders = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM carport_item";
+            String sql = "SELECT * FROM orders INNER JOIN order_status, user";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
-                    int order_id = rs.getInt("order_ID");
-                    int item_id = rs.getInt("item_ID");
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
-                    int quantity = rs.getInt("quantity");
-                    int price = rs.getInt("price");
-                    String description = rs.getString("description");
+                    String roof_type = rs.getString("roof_type");
+                    String name = rs.getString("email");
+                    String status = rs.getString("status");
 
-                    carportItems.add(new CarportItem(order_id, item_id, length, width, quantity, price, description));
+                    confirmedOrders.add(new ConfirmedOrders(width, length, roof_type, name, status));
                 }
-                return carportItems;
+                return confirmedOrders;
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }

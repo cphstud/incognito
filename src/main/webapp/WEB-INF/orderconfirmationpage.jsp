@@ -23,7 +23,7 @@
         </div>
 
 
-        <h3>Ordre detaljer</h3>
+        <h3 class="mt-5">Ordre detaljer</h3>
 
         <c:forEach var="orderconfirmation" items="${requestScope.ordercofirmation}">
             <p>Købsdato: ${orderconfirmation.date}</p>
