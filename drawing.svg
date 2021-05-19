@@ -23,14 +23,14 @@
     marker-start: url(#beginArrow);
     marker-end: url(#endArrow);"/>
 
-    <line x1="75" y1="650" x2="855" y2="650" style="stroke:#000000;
+    <line x1="75" y1="680" x2="855" y2="680" style="stroke:#000000;
     marker-start: url(#beginArrow);
     marker-end: url(#endArrow);"/>
 
 
     <!-- Text: mål -->
     <text style="text-anchor: middle" transform="translate(30,300) rotate(-90)">600 cm</text>
-    <text style="text-anchor: middle" x="502" y="670">780 cm</text>
+    <text style="text-anchor: middle" x="500" y="700">780 cm</text>
 
 
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="75" y="10" width="800"></svg>
@@ -45,8 +45,57 @@
 
 
     <!-- Spær -->
-    <rect x="70" y="10" height="600" width="4.5" style="stroke:#000000; fill: #ffffff"/>
-    <rect x="850" y="10" height="600" width="4.5" style="stroke:#000000; fill: #ffffff"/>
+    <rect x="70" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="120" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="170" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="220" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="270" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="320" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="370" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="420" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="470" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="520" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="570" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="620" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="670" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="720" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="770" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="820" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
+    <rect x="850" y="10" height="600" width="4.5"
+          style="stroke:#000000; fill: #ffffff"/>
+
 
     <!-- strippede linje -->
     <line stroke-dasharray="5, 5" x1="700" y1="580" x2="130" y2="45" stroke="black" />
@@ -61,6 +110,55 @@
     <rect x="180" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
     <rect x="500" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
     <rect x="780" y="572" width="10" height="10" style="stroke:#000000; fill: #ffffff"/>
+
+    <!--    Vandret spær (stiger 55)-->
+    <line x1="70"  y1="640" x2="120"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(95,660) rotate(0)">0,55</text>
+
+    <line x1="120"  y1="640" x2="170"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(145,660) rotate(0)">0,55</text>
+
+    <line x1="170"  y1="640" x2="220"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(195,660) rotate(0)">0,55</text>
+
+    <line x1="270"  y1="640" x2="220"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(245,660) rotate(0)">0,55</text>
+
+    <line x1="320"  y1="640" x2="270"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(295,660) rotate(0)">0,55</text>
+
+    <line x1="370"  y1="640" x2="320"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(345,660) rotate(0)">0,55</text>
+
+    <line x1="420"  y1="640" x2="370"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(395,660) rotate(0)">0,55</text>
+
+    <line x1="470"  y1="640" x2="420"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(445,660) rotate(0)">0,55</text>
+
+    <line x1="520"  y1="640" x2="470"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(495,660) rotate(0)">0,55</text>
+
+    <line x1="570"  y1="640" x2="520"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(545,660) rotate(0)">0,55</text>
+
+    <line x1="620"  y1="640" x2="570"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(595,660) rotate(0)">0,55</text>
+
+    <line x1="670"  y1="640" x2="620"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(645,660) rotate(0)">0,55</text>
+
+    <line x1="720"  y1="640" x2="670"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(695,660) rotate(0)">0,55</text>
+
+    <line x1="770"  y1="640" x2="720"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(745,660) rotate(0)">0,55</text>
+
+    <line x1="820"  y1="640" x2="770"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(795,660) rotate(0)">0,55</text>
+
+    <line x1="855"  y1="640" x2="820"  y2="640" style="stroke: #000000; marker-start: url(#beginArrow);marker-end: url(#endArrow);"/>
+    <text style="text-anchor: middle" transform="translate(840,660) rotate(0)">0,55</text>
 
     </svg>
 
