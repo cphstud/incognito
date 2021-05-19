@@ -26,6 +26,7 @@ public class BillOfMaterialsMapper {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
+                    int order_id = rs.getInt("order_ID");
                     int item_id = rs.getInt("item_ID");
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
@@ -33,7 +34,7 @@ public class BillOfMaterialsMapper {
                     int price = rs.getInt("price");
                     String description = rs.getString("description");
 
-                    carportItems.add(new CarportItem(item_id, length, width, quantity, price, description));
+                    carportItems.add(new CarportItem(order_id, item_id, length, width, quantity, price, description));
                 }
                 return carportItems;
             } catch (SQLException ex) {
