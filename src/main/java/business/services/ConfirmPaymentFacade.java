@@ -1,6 +1,7 @@
 package business.services;
 
 import business.entities.ConfirmPayment;
+import business.entities.Order;
 import business.entities.Requests;
 import business.exceptions.UserException;
 import business.persistence.ConfirmPaymentMapper;
@@ -21,7 +22,5 @@ public class ConfirmPaymentFacade {
     public List<ConfirmPayment> ViewAllConfirmedPayments() throws UserException, SQLException {
         return confirmPaymentMapper.ViewAllConfirmedPayments();
     }
-
-
 
 }

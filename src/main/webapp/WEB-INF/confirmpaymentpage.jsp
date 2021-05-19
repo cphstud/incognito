@@ -24,12 +24,7 @@
 
         <div class="contact mt-5">
             <h3>Kontakt Informationer:</h3>
-            <p>${requestScope.payment.address}</p>
-            <p>${requestScope.payment.phone}</p>
-            <p>${requestScope.payment.name}</p>
-            <p>${requestScope.payment.postcode}</p>
-            <p>${requestScope.payment.city}</p>
-            <p>${requestScope.payment.credit}</p>
+
         </div>
 
         <table class="table mt-5">
@@ -58,7 +53,7 @@
         <div class="d-flex justify-content-center mt-5">
             <br>
             <a href="employeepage" type="button" class="btn btn-primary btn-lg ms-5">Gå tilbage</a>
-            <a href="betaling" type="button" class="btn btn-success btn-lg ms-5">Bekræft betaling <img src="${pageContext.request.contextPath}/images/arrow.png" width="30" class="ms-2"></a>
+            <a href="orderconfirmationpage" type="button" class="btn btn-success btn-lg ms-5">Bekræft betaling <img src="${pageContext.request.contextPath}/images/arrow.png" width="30" class="ms-2"></a>
         </div>
 
 
