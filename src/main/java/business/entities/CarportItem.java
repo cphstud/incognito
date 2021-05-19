@@ -8,15 +8,33 @@ public class CarportItem {
     private int price;
     private String description;
 
-    public CarportItem(int orderId, int order_id, int item_id, int length, int quantity, int price, String description) {
-        //item_id
-        //ordre_id......
+
+
+
+    public CarportItem(int order_id, int itemId, int item_id, int length, int quantity, int price, String description) {
         this.order_id = order_id;
         this.item_id = item_id;
         this.length = length;
         this.quantity = quantity;
         this.price = price;
         this.description = description;
+
+    }
+
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
+    }
+
+    public int getItem_id(int i) {
+        return item_id;
+    }
+
+    public void setItem_id(int item_id) {
+        this.item_id = item_id;
     }
 
     public int getLength() {

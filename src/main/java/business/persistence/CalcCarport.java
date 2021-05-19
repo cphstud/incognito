@@ -1,8 +1,35 @@
 package business.persistence;
 
+import business.entities.CarportItem;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class CalcCarport {
     // Method for calling the posts, beams and rafters
-    public void calcPost(int length, int width) {
+
+    CarportItem carportItems;
+    Database database;
+
+    public List<CarportItem> calcPost(int length, int width) {
+        List<CarportItem> carportItems = new ArrayList<>();
+        try (Connection connection = database.connect())
+        {
+            String sql = "SELECT * FROM materials WHERE id = 10";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
+            {
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()){
+                    int id = rs.getInt("id");
+                    carportItems.add(new CarportItem());
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
         //Overskrift "Udregnng af stolper"
         //1. Hent Part via id (henter id_nr 1 = stolpe)
@@ -28,6 +55,7 @@ public class CalcCarport {
         // ( ??????(660) / 310 cm = ??????(2,12) )
         // ( Fx. 2,12 rounds up to 3 = 3 posts on each side of carport ).
         // Return (3 x 2 = 6) 6 posts with a length of 300 cm to CalcCarport.java Class.
+        return result;
     }
 
     public void calcBeam(int length, int width) {
