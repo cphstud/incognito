@@ -15,13 +15,6 @@ public class ShowAllCarportItemsCommand extends Command
     public String pageToShow;
     private CarportItemFacade carportItemFacade = new CarportItemFacade(database);
 
-    // længde = 780
-    // bredde = 600
-    // calc beams(l, b) = 2 * 780 + 2 * 600;
-    // calc rafts(l, b) = 780 / 55 (runde op til hele tal)
-    // calc posts(l, b) = 4 stykker
-    // hashmap med antal og type (rafts, posts, beams)
-
     public ShowAllCarportItemsCommand(String pageToShow, String role)
     {
         this.pageToShow = pageToShow;
