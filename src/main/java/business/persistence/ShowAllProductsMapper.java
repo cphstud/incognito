@@ -29,7 +29,7 @@ public class ShowAllProductsMapper {
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
                     String roof_type = rs.getString("roof_type");
-                    String name = rs.getString("name");
+                    String name = rs.getString("email");
                     String status = rs.getString("roof_type");
 
                     seeProducts.add(new SeeProducts(width, length, roof_type, name, status));

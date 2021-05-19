@@ -26,6 +26,10 @@ public class ShowAllCarportItemsCommand extends Command
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException, SQLException {
         List<CarportItem> carportItems = carportItemFacade.BillOfMaterials();
         request.setAttribute("carportItems", carportItems);
+
+        List<CarportItem> carportItem = carportItemFacade.calcPost();
+        request.setAttribute("carportItems", carportItem);
+
         return pageToShow;
 
     }

@@ -1,22 +1,26 @@
 package business.persistence;
 
 import business.entities.CarportItem;
+import business.exceptions.UserException;
 
+import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalcCarport {
+public class CalcCarportMapper {
     // Method for calling the posts, beams and rafters
+    private static Database database;
 
-    CarportItem carportItems;
-    Database database;
+    public CalcCarportMapper(Database database) {
+        this.database = database;
+    }
 
-    public List<CarportItem> calcPost(int length, int width) {
+    public List<CarportItem> calcPost() throws UserException {
         List<CarportItem> carportItems = new ArrayList<>();
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM materials WHERE id = 10";
+            String sql = "SELECT * FROM material WHERE id = ?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
@@ -24,11 +28,12 @@ public class CalcCarport {
 
                 while (rs.next()){
                     int id = rs.getInt("id");
-                    carportItems.add(new CarportItem());
+                    carportItems.add(new CarportItem(id));
                 }
+                return carportItems;
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException ex) {
+            throw new UserException(ex.getMessage());
         }
 
         //Overskrift "Udregnng af stolper"
@@ -55,8 +60,9 @@ public class CalcCarport {
         // ( ??????(660) / 310 cm = ??????(2,12) )
         // ( Fx. 2,12 rounds up to 3 = 3 posts on each side of carport ).
         // Return (3 x 2 = 6) 6 posts with a length of 300 cm to CalcCarport.java Class.
-        return result;
+
     }
+
 
     public void calcBeam(int length, int width) {
         // Method for the actual calculations on how many beams there has to be when the length of the carport is X.

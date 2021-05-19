@@ -26,13 +26,13 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="seeproducts" items="${requestScope.seeproducts}">
+            <c:forEach var="seeProducts" items="${requestScope.seeProducts}">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${seeProducts.length}</td>
+                <td>${seeProducts.width}</td>
+                <td>${seeProducts.roof_type}</td>
+                <td>${seeProducts.name}</td>
+                <td>${seeProducts.status}</td>
             </tr>
             </c:forEach>
             </tbody>

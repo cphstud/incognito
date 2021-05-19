@@ -38,5 +38,7 @@
 
         </div>
 
+        <a href="${pageContext.request.contextPath}/fc/seeallproductspage">Se Alle Varer</a>
+
     </jsp:body>
 </t:genericpage>

@@ -35,11 +35,10 @@ public abstract class Command
         commands.put("seallcustomersrequests", new ShowAllOrdersCommand("seallcustomersrequests", "employee"));
         commands.put("seallconfirmedorders", new CommandProtectedPage("seallconfirmedorders", "employee"));
         commands.put("customeroverview", new CommandProtectedPage("customeroverview", "employee"));
-        commands.put("seeallproductspage", new ShowAllProductsCommand("seeallproductspage", "employee"));
+        commands.put("seeallproductspage", new ShowAllProductsCommand("seeallproductspage"));
         commands.put("createoffer", new CommandProtectedPage("createoffer", "employee"));
         commands.put("requestpage", new CommandProtectedPage("requestpage", "customer"));
         commands.put("adminpage", new CommandProtectedPage("adminpage", "admin"));
-      //  commands.put("seeallproductspage", new CommandProtectedPage("seeallproductspage", "admin"));
         commands.put("addnewproductpage", new CommandProtectedPage("addnewproductpage", "admin"));
         commands.put("seallsellerspage", new CommandProtectedPage("seallsellerspage", "admin"));
         commands.put("addnewsellerpage", new CommandProtectedPage("addnewsellerpage", "admin"));
@@ -49,6 +48,7 @@ public abstract class Command
         commands.put("seallcustomerspage", new UserCommand("seallcustomerspage", "employee"));
         commands.put("orderconfirmationpage", new OrderConfirmationCommand("orderconfirmationpage", "customer"));
         commands.put("seeallconfirmedorders", new ListOfAllConfirmedOrdersCommand("seeallconfirmedorders", "employee"));
+        commands.put("seeallsellerspage", new ShowAllSellersCommand("seeallsellerspage", "admin"));
     }
 
     public static Command fromPath(

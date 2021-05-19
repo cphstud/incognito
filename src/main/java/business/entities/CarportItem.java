@@ -21,6 +21,10 @@ public class CarportItem {
 
     }
 
+    public CarportItem(int item_id) {
+        this.item_id = item_id;
+    }
+
     public int getOrder_id() {
         return order_id;
     }
