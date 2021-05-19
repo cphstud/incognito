@@ -43,7 +43,11 @@ public abstract class Command
         commands.put("addnewproductpage", new CommandProtectedPage("addnewproductpage", "admin"));
         commands.put("seallsellerspage", new CommandProtectedPage("seallsellerspage", "admin"));
         commands.put("addnewsellerpage", new CommandProtectedPage("addnewsellerpage", "admin"));
+        commands.put("customerviewrequestspage", new ViewCustomerRequestsCommand("customerviewrequestspage", "customer"));
+        commands.put("confirmpaymentpage", new ConfirmPaymentCommand("confirmpaymentpage", "customer"));
         commands.put("showsvg",new showSVGCommand  ("svgpage"));
+        commands.put("seallcustomerspage", new UserCommand("seallcustomerspage", "employee"));
+        commands.put("orderconfirmationpage", new OrderConfirmationCommand("orderconfirmationpage", "customer"));
     }
 
     public static Command fromPath(

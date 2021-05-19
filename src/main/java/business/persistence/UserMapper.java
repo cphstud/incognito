@@ -1,9 +1,12 @@
 package business.persistence;
 
+import business.entities.Order;
 import business.exceptions.UserException;
 import business.entities.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserMapper
 {
@@ -73,6 +76,43 @@ public class UserMapper
         catch (SQLException ex)
         {
             throw new UserException("Connection to database could not be established");
+        }
+    }
+
+
+    public List<User> showAllUsers() throws UserException {
+
+        List<User> users = new ArrayList<>();
+
+        try (Connection connection = database.connect())
+        {
+            String sql = "SELECT * FROM users";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
+            {
+                ResultSet rs = ps.executeQuery();
+
+                while(rs.next()) {
+                    int user_id = rs.getInt("user_id");
+                    String name = rs.getString("name");
+                    String address = rs.getString("address");
+                    String postcode = rs.getString("postcode");
+                    String phone = rs.getString("phone");
+                    String email = rs.getString("email");
+                    String role = rs.getString("role");
+
+                    users.add(new User(user_id, name, address, postcode, phone, email, role));
+                }
+                return users;
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException ex)
+        {
+            throw new UserException(ex.getMessage());
         }
     }
 

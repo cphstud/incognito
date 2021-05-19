@@ -167,11 +167,12 @@ CREATE TABLE `user` (
   `user_id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
-  `phone` text,
+  `phone` int DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `role` varchar(45) DEFAULT NULL,
   `postcode` varchar(10) DEFAULT NULL,
+  `credit` int DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -182,7 +183,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,NULL,NULL,NULL,'ermin','1234','customer',NULL),(4,NULL,NULL,NULL,'daniel','1234','employee',NULL),(5,NULL,NULL,NULL,'admin','123','admin',NULL);
+INSERT INTO `user` VALUES (3,NULL,NULL,NULL,'ermin','1234','customer',NULL,NULL),(4,NULL,NULL,NULL,'daniel','1234','employee',NULL,NULL),(5,NULL,NULL,NULL,'admin','123','admin',NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,4 +196,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-17 10:47:44
+-- Dump completed on 2021-05-18 15:35:58
