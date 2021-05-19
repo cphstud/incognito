@@ -26,6 +26,7 @@
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="seeproducts" items="${requestScope.seeproducts}">
             <tr>
                 <td></td>
                 <td></td>
@@ -33,6 +34,7 @@
                 <td></td>
                 <td></td>
             </tr>
+            </c:forEach>
             </tbody>
         </table>
         <div class="d-flex justify-content-center mt-5">

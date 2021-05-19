@@ -1,18 +1,12 @@
 package web.commands;
 
 import business.entities.ConfirmPayment;
-import business.entities.Order;
-import business.entities.Requests;
 import business.entities.User;
-import business.exceptions.UserException;
 import business.services.ConfirmPaymentFacade;
-import business.services.CustomerRequestsFacade;
-import business.services.OrderFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.sql.SQLException;
 import java.util.List;
 
 public class ConfirmPaymentCommand extends CommandProtectedPage
@@ -25,13 +19,18 @@ public class ConfirmPaymentCommand extends CommandProtectedPage
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException, SQLException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+        String name = request.getParameter("name");
+        String address = request.getParameter("address");
+        int phone = Integer.parseInt(request.getParameter("phone"));
+        String email = request.getParameter("email");
 
+        ConfirmPayment contactInformation = confirmPaymentFacade.ShowContactInformation(name, address, phone, email);
+        request.setAttribute("contactInformation", contactInformation);
 
-        List<ConfirmPayment> confirmpayment = confirmPaymentFacade.ViewAllConfirmedPayments();
-        request.setAttribute("confirmpayment", confirmpayment);
-
+        List<ConfirmPayment> confirmPayment = confirmPaymentFacade.ViewAllConfirmedPayments();
+        request.setAttribute("confirmPayment", confirmPayment);
 
 
         return pageToShow;

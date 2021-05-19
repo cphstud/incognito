@@ -12,6 +12,7 @@ public class ConfirmPayment {
     private int phone;
     private int postcode;
     private String city;
+    private String email;
 
     public ConfirmPayment(int order_id, int width, int length, String roof_type, String name, String status, int credit, String address, int phone, int postcode, String city) {
         this.order_id = order_id;
@@ -27,6 +28,20 @@ public class ConfirmPayment {
         this.city = city;
     }
 
+    public ConfirmPayment(String name, String address, int phone, String email) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getOrder_id() {
         return order_id;

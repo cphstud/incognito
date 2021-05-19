@@ -1,16 +1,18 @@
 package business.entities;
 
+import java.sql.Timestamp;
+
 public class Order {
 
     private int customer_id;
     private int length;
     private int width;
-    private long date;
+    private Timestamp date;
     private int subtotal;
     private String roof_type;
     private int order_id;
 
-    public Order(int customer_id, int length, int width, long date, int subtotal, String roof_type, int order_id) {
+    public Order(int customer_id, int length, int width, Timestamp date, int subtotal, String roof_type, int order_id) {
         this.customer_id = customer_id;
         this.length = length;
         this.width = width;
@@ -52,11 +54,11 @@ public class Order {
         this.width = width;
     }
 
-    public long getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(long date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

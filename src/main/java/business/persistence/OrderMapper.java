@@ -64,7 +64,7 @@ public class OrderMapper
                     int order_id = rs.getInt("order_id");
                     int length = rs.getInt("length");
                     int width = rs.getInt("width");
-                    long date = rs.getLong("date");
+                    Timestamp date = rs.getTimestamp("date");
                     int sub_total = rs.getInt("subtotal");
                     String roof_type = rs.getString("roof_type");
 
