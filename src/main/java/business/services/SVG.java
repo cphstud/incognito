@@ -22,9 +22,9 @@ public class SVG
 
     private final String lineTemplate = "<line x1=\"%d\" y1=\"%d\" x2=\"%d\" y2=\"%d\" style=\"stroke:#000000;" +
            " marker-start: url(#beginArrow);"+
-           " marker-end: url(#endArrow);";
+           " marker-end: url(#endArrow);\"/>";
 
-    private final String markerTemplate = "<marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\";";
+    private final String markerTemplate = "<marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\"/>";
 
     public SVG(int x, int y, String viewBox, int width, int height) {
         this.x = x;

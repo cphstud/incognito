@@ -17,16 +17,21 @@ public class showSVGCommand extends CommandUnprotectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException, SQLException
     {
-        SVG svg = new SVG(0,0,"0 0 855 690", 100, 100);
-        svg.addLine(150,650,800,650);
-        svg.addLine(100,0,100,600);
+        SVG svgOuter = new SVG(0,0,"0 0 855 690", 100, 100);
+        svgOuter.addLine(150,650,800,650);
+        svgOuter.addLine(100,0,100,600);
+
+        SVG svgInner = new SVG(0,0,"0 0 800 600", 100, 100);
+        //svgInner.addRect(100,100, 200, 300);
 
         for (int x = 0; x < 15; x++)
         {
-            svg.addRect(100 + 50 * x,0,600,4);
+            svgInner.addRect(100 + 50 * x,0,600,4);
         }
 
-        request.setAttribute("drawing", svg.toString());
+        svgOuter.addSvg(svgInner);
+
+        request.setAttribute("drawing", svgOuter.toString());
         return pageToShow;
     }
 }

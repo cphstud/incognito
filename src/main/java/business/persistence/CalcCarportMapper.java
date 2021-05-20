@@ -1,7 +1,9 @@
 package business.persistence;
 
 import business.entities.CarportItem;
+import business.entities.Material;
 import business.exceptions.UserException;
+import business.services.MaterialFacade;
 
 import javax.xml.crypto.Data;
 import java.sql.*;
@@ -12,32 +14,22 @@ public class CalcCarportMapper {
     // Method for calling the posts, beams and rafters
     private static Database database;
 
-    public CalcCarportMapper(Database database) {
-        this.database = database;
+    CarportItem carportItems;
+    MaterialFacade materialFacade;
+
+    public CalcCarport(MaterialFacade materialFacade) {
+        this.materialFacade = materialFacade;
+
     }
 
-    public List<CarportItem> calcPost() throws UserException {
+
+    public List<CarportItem> calcPost(int length, int width) throws UserException {
         List<CarportItem> carportItems = new ArrayList<>();
-        try (Connection connection = database.connect())
-        {
-            String sql = "SELECT * FROM material WHERE id = ?";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
-            {
-                ResultSet rs = ps.executeQuery();
-
-                while (rs.next()){
-                    int id = rs.getInt("id");
-                    carportItems.add(new CarportItem(id));
-                }
-                return carportItems;
-            }
-        } catch (SQLException ex) {
-            throw new UserException(ex.getMessage());
-        }
 
         //Overskrift "Udregnng af stolper"
         //1. Hent Part via id (henter id_nr 1 = stolpe)
+        Material material = materialFacade.getCarportItemById(10);
 
         //2. Ud fra længde ->¨antal stolper? = qty
 
@@ -47,7 +39,7 @@ public class CalcCarportMapper {
 
         //5. Byg CarportItem (length, qty,  price, des)
 
-        //6. lave en CarportItem Array -> put(new CarportItem)
+        //6. lave en CarportItem Array -> add(new CarportItem)
 
         //7. Gemmer enkelte plads i array i DB
 
@@ -60,10 +52,9 @@ public class CalcCarportMapper {
         // ( ??????(660) / 310 cm = ??????(2,12) )
         // ( Fx. 2,12 rounds up to 3 = 3 posts on each side of carport ).
         // Return (3 x 2 = 6) 6 posts with a length of 300 cm to CalcCarport.java Class.
-
-    }
-
-
+        //  return result;
+        // }
+/*
     public void calcBeam(int length, int width) {
         // Method for the actual calculations on how many beams there has to be when the length of the carport is X.
         // Infinite length of beam?
@@ -79,5 +70,9 @@ public class CalcCarportMapper {
         // Return  15 rafters with the length of 600cm to CalcCarport.java Class.
 
     }
+*/
+        return null;
+    }
 
 }
+
