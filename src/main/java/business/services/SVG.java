@@ -24,7 +24,8 @@ public class SVG
            " marker-start: url(#beginArrow);"+
            " marker-end: url(#endArrow);\"/>";
 
-    private final String markerTemplate = "<marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\"/>";
+    private final String markerTemplate = "<marker id=\"beginArrow\" markerWidth=\"12\" markerHeight=\"12\" refX=\"0\" refY=\"6\" orient=\"auto\"+ " +
+            "<path d=\"M0,6 L12,0 L12,12 L0,6\" style=\"fill: #000000;\"/>";
 
     public SVG(int x, int y, String viewBox, int width, int height) {
         this.x = x;
@@ -48,6 +49,11 @@ public class SVG
     public void addSvg(SVG innerSVG)
     {
         svg.append(innerSVG.toString());
+    }
+
+    public void addMarker()
+    {
+
     }
 
 
