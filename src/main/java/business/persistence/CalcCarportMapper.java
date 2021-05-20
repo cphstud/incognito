@@ -17,13 +17,13 @@ public class CalcCarportMapper {
     CarportItem carportItems;
     MaterialFacade materialFacade;
 
-    public CalcCarport(MaterialFacade materialFacade) {
+    public CalcCarportMapper(MaterialFacade materialFacade) {
         this.materialFacade = materialFacade;
 
     }
 
 
-    public List<CarportItem> calcPost(int length, int width) throws UserException {
+    public List<CarportItem> calcPost() throws UserException {
         List<CarportItem> carportItems = new ArrayList<>();
 
 
