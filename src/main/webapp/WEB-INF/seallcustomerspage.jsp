@@ -30,7 +30,7 @@
             <tbody>
             <c:forEach var="users" items="${requestScope.users}">
                 <tr>
-                    <td>${users.user_id}</td>
+                    <td>${users.id}</td>
                     <td>${users.name}</td>
                     <td>${users.address}</td>
                     <td>${users.postcode}</td>

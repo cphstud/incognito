@@ -16,14 +16,18 @@ public class User
     private String role;
     private String name;
     private String phone;
+    private String address;
+    private String postcode;
 
-    public User(int id, String email, String password, String role, String name, String phone) {
+    public User(int id, String email, String password, String role, String name, String phone, String address, String postcode) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.role = role;
         this.name = name;
         this.phone = phone;
+        this.address = address;
+        this.postcode = postcode;
     }
 
     public User(int id, String email, String password, String role) {
@@ -32,6 +36,7 @@ public class User
         this.password = password;
         this.role = role;
     }
+
 
 
 
@@ -86,5 +91,21 @@ public class User
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 }
