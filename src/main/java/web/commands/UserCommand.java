@@ -22,17 +22,17 @@ public class UserCommand extends CommandProtectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        HttpSession session = request.getSession();
-        int user_id = Integer.parseInt(request.getParameter("user_id"));
-        String name = request.getParameter("name");
-        String address = request.getParameter("address");
-        String postcode = request.getParameter("postcode");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String role = request.getParameter("role");
+//        HttpSession session = request.getSession();
+//        int user_id = Integer.parseInt(request.getParameter("user_id"));
+//        String name = request.getParameter("name");
+//        String address = request.getParameter("address");
+//        String postcode = request.getParameter("postcode");
+//        String phone = request.getParameter("phone");
+//        String email = request.getParameter("email");
+//        String role = request.getParameter("role");
 
 
-        List<User> users = userFacade.showAllUsers(user_id, name, address, postcode, phone, email, role);
+        List<User> users = userFacade.showAllUsers();
         request.setAttribute("users", users);
             return pageToShow;
     }

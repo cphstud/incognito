@@ -29,7 +29,7 @@ public class UserFacade
     }
 
 
-    public List<User> showAllUsers(int user_id, String name, String address, String postcode, String phone, String email, String role) throws UserException {
+    public List<User> showAllUsers() throws UserException {
         return userMapper.showAllUsers();
     }
 

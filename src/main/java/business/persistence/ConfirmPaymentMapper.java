@@ -20,7 +20,7 @@ public class ConfirmPaymentMapper {
         List<ConfirmPayment> confirmPayment = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM orders INNER JOIN order_status, user";
+            String sql = "SELECT * FROM user INNER JOIN orders, order_status";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ResultSet rs = ps.executeQuery();
@@ -31,12 +31,12 @@ public class ConfirmPaymentMapper {
                     int length = rs.getInt("length");
                     String roof_type = rs.getString("roof_type");
                     String name = rs.getString("email");
-                    String status = rs.getString("status");
                     int credit = rs.getInt("credit");
                     String address = rs.getString("address");
                     int phone = rs.getInt("phone");
                     int postcode = rs.getInt("postcode");
                     String city = rs.getString("city");
+                    String status = rs.getString("status");
 
                     confirmPayment.add(new ConfirmPayment(order_id, width, length, roof_type, name, status, credit, address, phone, postcode, city));
                 }

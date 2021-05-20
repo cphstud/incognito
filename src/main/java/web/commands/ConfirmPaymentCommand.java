@@ -27,11 +27,6 @@ public class ConfirmPaymentCommand extends CommandProtectedPage
 
         User user = (User) session.getAttribute("user");
 
-        String name = "Jon"; // = request.getParameter("name");
-        String address = "asdfsadf"; //= request.getParameter("address");
-        int phone = 234234; //Integer.parseInt(request.getParameter("phone"));
-        String email = user.getEmail();
-
         User contactInformation = userFacade.getUserById(user.getId());
         request.setAttribute("contactInformation", contactInformation);
         List<ConfirmPayment> confirmPayment = confirmPaymentFacade.ViewAllConfirmedPayments();

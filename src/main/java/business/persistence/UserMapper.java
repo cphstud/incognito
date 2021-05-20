@@ -103,7 +103,7 @@ public class UserMapper
                     String email = rs.getString("email");
                     String role = rs.getString("role");
 
-                    users.add(new User(user_id, email, password, role, name, phone));
+                    users.add(new User(user_id, email, password, role, name, phone, address, postcode));
 
                 }
                 return users;
@@ -132,14 +132,13 @@ public class UserMapper
 
                     userid = rs.getInt("user_id");
                     String name = rs.getString("name");
-                    String address = rs.getString("address");
                     String password = rs.getString("password");
-                    String postcode = rs.getString("postcode");
                     String phone = rs.getString("phone");
                     String email = rs.getString("email");
                     String role = rs.getString("role");
+                    String address = rs.getString("address");
 
-                    user = new User(userid, email, password,role, name, phone );
+                    user = new User(userid, email, password,role, name, phone, password, address);
                  //   int id, String email, String password, String role, String name, String phone)
 
 
@@ -153,6 +152,4 @@ public class UserMapper
 
         return user;
     }
-
-
 }
