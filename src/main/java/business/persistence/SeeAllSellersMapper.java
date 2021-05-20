@@ -1,10 +1,8 @@
 package business.persistence;
 
-import business.entities.Order;
-import business.entities.OrderConfirmation;
+
 import business.entities.SeeAllSellers;
 import business.exceptions.UserException;
-import business.services.OrderFacade;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -32,7 +30,7 @@ public class SeeAllSellersMapper
 
                 while (rs.next()) {
                     int user_id = rs.getInt("user_id");
-                    String name = rs.getString("name");
+                    String name = rs.getString("email");
                     String address = rs.getString("address");
                     int phone = rs.getInt("phone");
                     String email = rs.getString("email");
@@ -56,6 +54,8 @@ public class SeeAllSellersMapper
             throw new UserException(ex.getMessage());
         }
     }
+
+
 
 
 

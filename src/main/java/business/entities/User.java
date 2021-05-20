@@ -14,9 +14,26 @@ public class User
     private String email;
     private String password; // Should be hashed and secured
     private String role;
+    private String name;
+    private String phone;
 
-    public User(int bruger_id, String navn, String addresse, String postnr, String telefon, String email, String rolle) {
+    public User(int id, String email, String password, String role, String name, String phone) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.name = name;
+        this.phone = phone;
     }
+
+    public User(int id, String email, String password, String role) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+
 
     @Override
     public String toString() {
@@ -63,4 +80,11 @@ public class User
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
 }

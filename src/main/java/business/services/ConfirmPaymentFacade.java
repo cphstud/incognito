@@ -25,10 +25,5 @@ public class ConfirmPaymentFacade {
         return confirmPaymentMapper.ViewAllConfirmedPayments();
     }
 
-    public ConfirmPayment ShowContactInformation(String name, String address, int phone, String email) throws Exception {
-        ConfirmPayment contactinfo = new ConfirmPayment(name, address, phone, email);
-        contactinfo = confirmPaymentMapper.ShowContactInformation(contactinfo);
-        return contactinfo;
-    }
 
 }

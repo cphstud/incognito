@@ -11,10 +11,8 @@ import java.util.List;
 
 public class ShowAllSellersCommand extends CommandProtectedPage
 {
-
-
-
     private SeeSellersFacade seeSellersFacade = new SeeSellersFacade(database);
+
 
     public ShowAllSellersCommand(String pageToShow, String role) {
         super(pageToShow, role);
@@ -24,8 +22,8 @@ public class ShowAllSellersCommand extends CommandProtectedPage
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException, SQLException {
 
 
-        List<SeeAllSellers> seeAllSellers = seeSellersFacade.ShowAllSellers();
-        request.setAttribute("seeAllSellers", seeAllSellers);
+        List<SeeAllSellers> sellers = seeSellersFacade.ShowAllSellers();
+        request.setAttribute("seeAllSellers", sellers);
 
         return pageToShow;
 

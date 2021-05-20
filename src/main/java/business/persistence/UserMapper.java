@@ -1,5 +1,6 @@
 package business.persistence;
 
+import business.entities.ConfirmPayment;
 import business.entities.Order;
 import business.exceptions.UserException;
 import business.entities.User;
@@ -86,7 +87,7 @@ public class UserMapper
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM users";
+            String sql = "SELECT * FROM user";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
@@ -97,11 +98,13 @@ public class UserMapper
                     String name = rs.getString("name");
                     String address = rs.getString("address");
                     String postcode = rs.getString("postcode");
+                    String password = rs.getString("password");
                     String phone = rs.getString("phone");
                     String email = rs.getString("email");
                     String role = rs.getString("role");
 
-                    users.add(new User(user_id, name, address, postcode, phone, email, role));
+                    users.add(new User(user_id, email, password, role, name, phone));
+
                 }
                 return users;
             }
@@ -115,5 +118,41 @@ public class UserMapper
             throw new UserException(ex.getMessage());
         }
     }
+
+    public User getUserById(int userid) throws Exception {
+        User user;
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM user WHERE user_id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1, userid);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+
+                    userid = rs.getInt("user_id");
+                    String name = rs.getString("name");
+                    String address = rs.getString("address");
+                    String password = rs.getString("password");
+                    String postcode = rs.getString("postcode");
+                    String phone = rs.getString("phone");
+                    String email = rs.getString("email");
+                    String role = rs.getString("role");
+
+                    user = new User(userid, email, password,role, name, phone );
+                 //   int id, String email, String password, String role, String name, String phone)
+
+
+                } else
+                {
+                    throw new UserException("der sket en fejl...");
+                }
+
+            }
+        }
+
+        return user;
+    }
+
 
 }

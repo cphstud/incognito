@@ -47,28 +47,6 @@ public class ConfirmPaymentMapper {
         }
     }
 
-    public ConfirmPayment ShowContactInformation(ConfirmPayment confirmPayment) throws Exception {
-        try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM user";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
-            {
-                ps.setString(1, confirmPayment.getName());
-                ps.setString(2, confirmPayment.getAddress());
-                ps.setInt(3, confirmPayment.getPhone());
-                ps.setString(4, confirmPayment.getEmail());
-
-
-                ps.executeQuery();
-                ResultSet ids = ps.getGeneratedKeys();
-                ids.next();
-                int id = ids.getInt(1);
-                confirmPayment.setOrder_id(id);
-
-            }
-        }
-
-        return confirmPayment;
-    }
 
 }

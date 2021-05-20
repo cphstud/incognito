@@ -38,7 +38,7 @@
 
         </div>
 
-        <a href="${pageContext.request.contextPath}/fc/seeallproductspage">Se Alle Varer</a>
+        <a href="${pageContext.request.contextPath}/fc/seeallproductspage" class="btn btn-success mt-4">Se Alle Varer</a>
 
     </jsp:body>
 </t:genericpage>

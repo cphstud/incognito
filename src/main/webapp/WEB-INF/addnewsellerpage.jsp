@@ -15,29 +15,29 @@
     <jsp:body>
 
 
-        <form action="${pageContext.request.contextPath}/fc/" method="post">
+        <form action="${pageContext.request.contextPath}/fc/addnewsellerpage" method="post">
         <div class="container mt-2">
 
             <label class="mt-2">Navn</label>
-            <input type="text" name="width" class="form-control mt-2">
+            <input type="text" name="name" class="form-control mt-2">
 
             <label class="mt-2">Addresse</label>
-            <input type="text" name="length" class="form-control mt-2">
+            <input type="text" name="address" class="form-control mt-2">
 
             <label class="mt-2">Telefon</label>
-            <input type="text" name="roof_type" class="form-control mt-2">
+            <input type="text" name="phone" class="form-control mt-2">
 
 
             <label class="mt-2">Email</label>
-            <input type="text" name="toolroom_width" class="form-control mt-2">
+            <input type="text" name="email" class="form-control mt-2">
 
             <label class="mt-2">Kodeord</label>
-            <input type="text" name="toolroom_length" class="form-control mt-2">
+            <input type="text" name="password" class="form-control mt-2">
 
 
-                <a href="adminpage" type="button" class="mt-3 btn btn-danger float-left">Go back</a>
+            <a href="adminpage" type="button" class="mt-3 btn btn-danger float-left">Gå tilbage</a>
 
-                <button type="submit" class="mt-3 btn btn-success float-end">Tilføj</button>
+            <button type="submit" class="mt-3 btn btn-success float-end">Tilføj</button>
 
 
 

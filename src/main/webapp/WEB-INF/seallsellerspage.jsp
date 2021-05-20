@@ -13,31 +13,37 @@
         <h1>Admin ID: ${sessionScope.user.id}</h1><br>
 
         <h3 class="mt-3">Oversigt over alle sælger:</h3>
-        <table class="table table-striped">
+        <table class="table">
             <thead>
-            <th>User ID</th>
-            <th>Navn</th>
-            <th>Addresse</th>
-            <th>Telefon</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Rolle</th>
-            <th>Postnummer</th>
-            <th>Kredit</th>
-            <th>By</th>
+            <tr>
+                <th>User ID</th>
+                <th>Navn</th>
+                <th>Addresse</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Rolle</th>
+                <th>Postnummer</th>
+                <th>Kredit</th>
+                <th>By</th>
+            </tr>
             </thead>
+            <tbody>
             <c:forEach var="seeAllSellers" items="${requestScope.seeAllSellers}">
-                <td>${seeAllSellers.user_id}</td>
-                <td>${seeAllSellers.name}</td>
-                <td>${seeAllSellers.address}</td>
-                <td>${seeAllSellers.phone}</td>
-                <td>${seeAllSellers.email}</td>
-                <td>${seeAllSellers.password}</td>
-                <td>${seeAllSellers.role}</td>
-                <td>${seeAllSellers.postcode}</td>
-                <td>${seeAllSellers.credit}</td>
-                <td>${seeAllSellers.city}</td>
+                <tr>
+                    <td>${seeAllSellers.user_id}</td>
+                    <td>${seeAllSellers.email}</td>
+                    <td>${seeAllSellers.address}</td>
+                    <td>${seeAllSellers.phone}</td>
+                    <td>${seeAllSellers.email}</td>
+                    <td>${seeAllSellers.password}</td>
+                    <td>${seeAllSellers.role}</td>
+                    <td>${seeAllSellers.postcode}</td>
+                    <td>${seeAllSellers.credit}</td>
+                    <td>${seeAllSellers.city}</td>
+                </tr>
             </c:forEach>
+            </tbody>
         </table>
         <div class="d-flex justify-content-center mt-5">
             <br>
