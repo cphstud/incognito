@@ -15,6 +15,8 @@
         <h3>Du er logget ind som rolle: ${sessionScope.role}</h3>
         <h3>Sælger ID: ${sessionScope.id}</h3>
 
+        <h2 class="mt-5">Forespørgelser</h2>
+
         <table class="table mt-5">
             <thead>
             <tr>
