@@ -13,9 +13,7 @@
     <jsp:body>
         <h1>weporkwperoi</h1>
 
-        <div style="">
-            Klik her for at se en <a href="${pageContext.request.contextPath}/fc/showsvg">SVG tegning</a>
-        </div>
+
 
 
     </jsp:body>

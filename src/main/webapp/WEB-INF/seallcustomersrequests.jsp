@@ -23,6 +23,7 @@
                 <th scope="col">width</th>
                 <th scope="col">Type</th>
                 <th>See Pieces List</th>
+                <th>See drawing</th>
             </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                 <td>${orders.width}</td>
                 <td>${orders.roof_type}</td>
                 <td><a href="${pageContext.request.contextPath}/fc/seeonepieceslistpage" class="btn btn-primary">Se stykliste</a></td>
+                <td><a href="${pageContext.request.contextPath}/fc/showsvg" type="button" class="btn btn-primary">Se tegning</a></td>
             </tr>
             </c:forEach>
             </tbody>
