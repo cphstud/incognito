@@ -27,6 +27,7 @@ public class CalcCarportMapper {
         List<CarportItem> carportItems = new ArrayList<>();
 
 
+
         //Overskrift "Udregnng af stolper"
         //1. Hent Part via id (henter id_nr 1 = stolpe)
         Material material = materialFacade.getCarportItemById(10);

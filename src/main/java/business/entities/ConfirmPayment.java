@@ -10,7 +10,6 @@ public class ConfirmPayment {
     private int credit;
     private String address;
     private int phone;
-    private String phone_2;
     private int postcode;
     private String city;
     private String email;
