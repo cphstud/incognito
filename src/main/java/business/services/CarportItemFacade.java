@@ -2,7 +2,7 @@ package business.services;
 
 import business.entities.CarportItem;
 import business.exceptions.UserException;
-import business.persistence.BillOfMaterialsMapper;
+import business.persistence.CarportItemMapper;
 import business.persistence.CalcCarportMapper;
 import business.persistence.Database;
 
@@ -12,15 +12,15 @@ import java.util.List;
 
 public class CarportItemFacade {
 
-    private BillOfMaterialsMapper billOfMaterialsMapper;
+    private CarportItemMapper carportItemMapper;
     private CalcCarportMapper calcCarportMapper;
 
     public CarportItemFacade(Database database) {
-        this.billOfMaterialsMapper = new BillOfMaterialsMapper(database);
+        this.carportItemMapper = new CarportItemMapper(database);
     }
 
     public List<CarportItem> BillOfMaterials() throws UserException, SQLException {
-        return billOfMaterialsMapper.BillOfMaterials();
+        return carportItemMapper.BillOfMaterials();
 
     }
 

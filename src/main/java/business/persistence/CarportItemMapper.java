@@ -8,11 +8,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BillOfMaterialsMapper {
+public class CarportItemMapper {
 
     private static Database database;
 
-    public BillOfMaterialsMapper(Database database) {
+    public CarportItemMapper(Database database) {
         this.database = database;
     }
 
