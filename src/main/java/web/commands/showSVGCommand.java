@@ -21,15 +21,15 @@ public class showSVGCommand extends CommandUnprotectedPage
         // y-aksen/lodret
         svgOuter.addLine(70,0,70,635);
         // x-aksen/vandret
-        svgOuter.addLine(105,670,800,670);
-        // tag side bund
-        svgOuter.addLine(105,640,800,640);
+        svgOuter.addLine(110,685,800,685);
+        // mål til Vandret spær
+        svgOuter.addLine(110,660,800,660);
         //rem bund
-        svgOuter.addLine(105,595,800,595);
-        svgOuter.addLine(105,600,800,600);
+        svgOuter.addLine(110,595,800,595);
+        svgOuter.addLine(110,600,800,600);
         // rem top
-        svgOuter.addLine(105,50,800,50);
-        svgOuter.addLine(105,45,800,45);
+        svgOuter.addLine(110,50,800,50);
+        svgOuter.addLine(110,45,800,45);
         // stolper top
         svgOuter.addRect( 180, 42, 10, 10);
         svgOuter.addRect( 500, 42, 10, 10);
@@ -38,10 +38,10 @@ public class showSVGCommand extends CommandUnprotectedPage
         svgOuter.addRect( 180, 593, 10, 10);
         svgOuter.addRect( 500, 593, 10, 10);
         svgOuter.addRect( 760, 593, 10, 10);
-
-
-        svgOuter.addLine(105,0,800,0);// tage side top
-
+        // tage side top
+        svgOuter.addLine(110,0,800,0);
+        // tag side bund
+        svgOuter.addLine(110,637,800,637);
 
         SVG svgInner = new SVG(0,0,"0 0 800 600", 100, 100);
 
