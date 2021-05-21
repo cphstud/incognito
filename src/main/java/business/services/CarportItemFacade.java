@@ -19,8 +19,8 @@ public class CarportItemFacade {
         this.carportItemMapper = new CarportItemMapper(database);
     }
 
-    public List<CarportItem> BillOfMaterials() throws UserException, SQLException {
-        return carportItemMapper.BillOfMaterials();
+    public List<CarportItem> CarportItemFacade() throws UserException, SQLException {
+        return carportItemMapper.CarportItemMap();
 
     }
 

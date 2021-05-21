@@ -2,8 +2,10 @@ package business.persistence;
 
 import business.entities.CarportItem;
 import business.entities.Material;
+import business.entities.Order;
 import business.exceptions.UserException;
 import business.services.MaterialFacade;
+import business.services.OrderFacade;
 
 import javax.xml.crypto.Data;
 import java.sql.*;
@@ -16,19 +18,17 @@ public class CalcCarportMapper {
 
     CarportItem carportItems;
     MaterialFacade materialFacade;
+    OrderFacade orderFacade;
 
     public CalcCarportMapper(MaterialFacade materialFacade) {
         this.materialFacade = materialFacade;
 
     }
 
-
+    //Overskrift "Udregnng af stolper"
     public List<CarportItem> calcPost() throws UserException {
         List<CarportItem> carportItems = new ArrayList<>();
 
-
-
-        //Overskrift "Udregnng af stolper"
         //1. Hent Part via id (henter id_nr 1 = stolpe)
         Material material = materialFacade.getCarportItemById(10);
 

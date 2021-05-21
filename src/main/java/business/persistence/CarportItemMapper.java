@@ -16,7 +16,7 @@ public class CarportItemMapper {
         this.database = database;
     }
 
-    public List<CarportItem> BillOfMaterials() throws UserException, SQLException {
+    public List<CarportItem> CarportItemMap() throws UserException, SQLException {
         List<CarportItem> carportItems = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
