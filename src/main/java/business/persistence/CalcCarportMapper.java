@@ -34,7 +34,7 @@ public class CalcCarportMapper {
 
         //2. Ud fra kundens forespørgsel i orders(780 - 120cm = 660)
         // ( 660 / 310 = 2,12 --> 3 stolper. 3 x 2 = 6(qty).
-        Order order = orderFacade.getLength();
+        
 
         //3.  Udregn pris (carportItem_qty * price_per_unit)
 
