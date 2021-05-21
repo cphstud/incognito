@@ -34,9 +34,9 @@ public class CalcCarportMapper {
 
         //2. Ud fra kundens forespørgsel i orders(780 - 120cm = 660)
         // ( 660 / 310 = 2,12 --> 3 stolper. 3 x 2 = 6(qty).
-        
 
-        //3.  Udregn pris (carportItem_qty * price_per_unit)
+
+        //3.  Udregn pris (qty * price_per_unit)
 
         //4.  Hard code beskrivelse: String des = "Stolpe til tag"
 
@@ -55,9 +55,9 @@ public class CalcCarportMapper {
         // ( ??????(660) / 310 cm = ??????(2,12) )
         // ( Fx. 2,12 rounds up to 3 = 3 posts on each side of carport ).
         // Return (3 x 2 = 6) 6 posts with a length of 300 cm to CalcCarport.java Class.
-        //  return result;
-        // }
-/*
+        return carportItems;
+    }
+
     public void calcBeam(int length, int width) {
         // Method for the actual calculations on how many beams there has to be when the length of the carport is X.
         // Infinite length of beam?
@@ -73,9 +73,7 @@ public class CalcCarportMapper {
         // Return  15 rafters with the length of 600cm to CalcCarport.java Class.
 
     }
-*/
-        return null;
-    }
+
 
 }
 
