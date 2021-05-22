@@ -24,11 +24,13 @@
 
         <div class="contact mt-5">
             <h3>Kontakt Informationer:</h3>
-            <p>${requestScope.contactInformation.name}</p>
-            <p>${requestScope.contactInformation.address}</p>
-            <p>${requestScope.contactInformation.phone}</p>
-            <p>${requestScope.contactInformation.email}</p>
-            <strong>Bruger kredit:</strong> ${requestScope.contactInformation.id}
+            <strong>Navn:</strong> ${requestScope.contactInformation.name}
+            <br><strong>Addresse:</strong> ${requestScope.contactInformation.address}
+            <br><strong>Telefon:</strong> ${requestScope.contactInformation.phone}
+            <br><strong>Email:</strong> ${requestScope.contactInformation.email}
+
+
+            <br><strong>Bruger kredit: ${requestScope.contactInformation.id}</strong>
         </div>
 
         <table class="table mt-5">
