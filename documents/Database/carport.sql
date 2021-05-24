@@ -18,6 +18,8 @@
 --
 -- Table structure for table `carport_item`
 --
+create database incogcarport;
+use incogcarport;
 
 DROP TABLE IF EXISTS `carport_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
