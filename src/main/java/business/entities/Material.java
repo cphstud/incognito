@@ -5,7 +5,6 @@ public class Material {
     int length;
     String type;
     String priceUnit;
-
     public Material(int id) {
         this.id = id;
     }
